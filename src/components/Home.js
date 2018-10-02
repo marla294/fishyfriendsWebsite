@@ -1,4 +1,5 @@
 import React from "react";
+import Fish from "./Fish";
 
 class Home extends React.Component {
 	state = { fish: [] };
@@ -10,9 +11,9 @@ class Home extends React.Component {
 	}
 
 	renderFish = () => {
-		const names = this.state.fish.map(fish => fish.Name);
-
-		return names.map(name => <div>{name}</div>);
+		return this.state.fish.map(fish => (
+			<Fish key={fish.Id} name={fish.Name} />
+		));
 	};
 
 	render() {
