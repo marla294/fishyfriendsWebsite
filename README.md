@@ -10,6 +10,7 @@ This will be the front end of the Fish Friends application.
 
 * ReactJS
 * JavaScript
+* Jest (JavaScript/React unit testing)
 
 ## References
 
