@@ -3,10 +3,14 @@ import PropTypes from "prop-types";
 import "../css/Fish.css";
 
 class Fish extends React.Component {
+	getImageSource = () => {
+		return `/images/fish/${this.props.name}.png`;
+	};
+
 	render() {
 		return (
 			<div className="fish">
-				<img src="/images/fish/clown.png" alt="fishPic"/>
+				<img src={this.getImageSource()} alt="fishPic" />
 				<div className="name">{this.props.name}</div>
 			</div>
 		);
