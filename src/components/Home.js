@@ -11,6 +11,7 @@ class Home extends React.Component {
 	}
 
 	renderFish = () => {
+		console.log(this.state.fish);
 		return this.state.fish.map(fish => (
 			<Fish key={fish.Id} name={fish.Name} />
 		));

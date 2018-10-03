@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fish appear in FishGrid 1`] = `
+<div>
+  <div>
+    dwarf angels
+  </div>
+  <div>
+    large angels
+  </div>
+</div>
+`;
