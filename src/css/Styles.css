@@ -1,0 +1,14 @@
+:root {
+	--blue: #33C7FF;
+	--ltgray: #FAFAFA;
+	--black: #181b21;
+	--sideMargin: 10px;
+	--gridGap: 20px;
+}
+
+body {
+	background: var(--blue);
+	color: var(--black);
+	margin: 0;
+	box-sizing: border-box;
+}
