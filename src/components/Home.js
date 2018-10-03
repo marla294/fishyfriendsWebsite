@@ -1,24 +1,17 @@
 import React from "react";
-import Fish from "./Fish";
+import FishGrid from "./FishGrid";
 
 class Home extends React.Component {
-	state = { fish: [] };
+	state = { fishes: [] };
 
 	componentDidMount() {
 		fetch("http://127.0.0.1:8080/api/fish").then(res => {
-			res.json().then(r => this.setState({ fish: r }));
+			res.json().then(r => this.setState({ fishes: r }));
 		});
 	}
 
-	renderFish = () => {
-		console.log(this.state.fish);
-		return this.state.fish.map(fish => (
-			<Fish key={fish.Id} name={fish.Name} />
-		));
-	};
-
 	render() {
-		return <div>{this.renderFish()}</div>;
+		return <FishGrid fishes={this.state.fishes} />;
 	}
 }
 
