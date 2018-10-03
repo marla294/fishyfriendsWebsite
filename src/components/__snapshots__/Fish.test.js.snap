@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Correct fish name appears 1`] = `
-<div>
-  Gobies
+<div
+  className="fish"
+>
+  <img
+    alt="fishPic"
+    src="/images/fish/clown.jpg"
+  />
+  <div
+    className="name"
+  >
+    Gobies
+  </div>
 </div>
 `;

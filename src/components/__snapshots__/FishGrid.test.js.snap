@@ -2,11 +2,31 @@
 
 exports[`Fish appear in FishGrid 1`] = `
 <div>
-  <div>
-    dwarf angels
+  <div
+    className="fish"
+  >
+    <img
+      alt="fishPic"
+      src="/images/fish/clown.jpg"
+    />
+    <div
+      className="name"
+    >
+      dwarf angels
+    </div>
   </div>
-  <div>
-    large angels
+  <div
+    className="fish"
+  >
+    <img
+      alt="fishPic"
+      src="/images/fish/clown.jpg"
+    />
+    <div
+      className="name"
+    >
+      large angels
+    </div>
   </div>
 </div>
 `;

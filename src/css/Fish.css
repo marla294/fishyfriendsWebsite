@@ -1,0 +1,17 @@
+.fish {
+	width: 200px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	border: 1px solid white;
+	margin: 10px;
+}
+
+.fish > img {
+	width: 50px;
+	margin: 5px;
+}
+
+.fish > .name {
+	align-self: center;
+	justify-self: left;
+}
