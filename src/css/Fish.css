@@ -4,6 +4,7 @@
 	grid-gap: 0.5em;
 	grid-template-columns: auto 1fr;
 	margin: 0.4em;
+	border-radius: 1em;
 }
 
 .fish:hover {
