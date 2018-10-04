@@ -1,38 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Fish appear in FishGrid 1`] = `
-<div>
-  <div
-    className="fish "
-    onClick={[Function]}
-  >
-    <img
-      alt="fishPic"
-      src="/images/fish/dwarf angels.png"
-    />
-    <div
-      className="name"
-    >
-      Dwarf angels
-    </div>
-  </div>
-  <div
-    className="fish "
-    onClick={[Function]}
-  >
-    <img
-      alt="fishPic"
-      src="/images/fish/large angels.png"
-    />
-    <div
-      className="name"
-    >
-      Large angels
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Fish appear in FishTank 1`] = `
 <div>
   <div

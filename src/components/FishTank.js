@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Fish from "./Fish";
 
-class FishGrid extends React.Component {
+class FishTank extends React.Component {
 	renderFish = () => {
 		return this.props.fishes.map(fish => (
 			<Fish key={fish.Id} name={fish.Name} />
@@ -14,8 +14,8 @@ class FishGrid extends React.Component {
 	}
 }
 
-FishGrid.propTypes = {
+FishTank.propTypes = {
 	fishes: PropTypes.array.isRequired
 };
 
-export default FishGrid;
+export default FishTank;

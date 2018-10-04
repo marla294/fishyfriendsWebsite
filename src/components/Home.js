@@ -1,5 +1,5 @@
 import React from "react";
-import FishGrid from "./FishGrid";
+import FishTank from "./FishTank";
 
 class Home extends React.Component {
 	state = { fishes: [] };
@@ -11,7 +11,7 @@ class Home extends React.Component {
 	}
 
 	render() {
-		return <FishGrid fishes={this.state.fishes} />;
+		return <FishTank fishes={this.state.fishes} />;
 	}
 }
 
