@@ -49,3 +49,5 @@ Fish.propTypes = {
 };
 
 export default Fish;
+
+// onClick={this.selectFish}
