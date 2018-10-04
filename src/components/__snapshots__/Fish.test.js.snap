@@ -6,7 +6,7 @@ exports[`Correct fish name appears 1`] = `
 >
   <img
     alt="fishPic"
-    src="/images/fish/clown.jpg"
+    src="/images/fish/Gobies.png"
   />
   <div
     className="name"

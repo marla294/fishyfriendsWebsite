@@ -4,7 +4,17 @@ import "../css/Fish.css";
 
 class Fish extends React.Component {
 	getImageSource = () => {
-		return `/images/fish/${this.props.name}.png`;
+		let pictureName = this.props.name;
+
+		if (pictureName === "corals/clams") {
+			pictureName = "corals and clams";
+		}
+
+		if (pictureName === "crabs, shrimps and snails") {
+			pictureName = "crabs shrimp and snails";
+		}
+
+		return `/images/fish/${pictureName}.png`;
 	};
 
 	render() {
