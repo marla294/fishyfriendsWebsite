@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Fish from "./Fish";
+import "../css/FishTank.css";
 
 class FishTank extends React.Component {
 	renderFish = () => {
@@ -10,7 +11,7 @@ class FishTank extends React.Component {
 	};
 
 	render() {
-		return <div>{this.renderFish()}</div>;
+		return <div className="fishTank">{this.renderFish()}</div>;
 	}
 }
 

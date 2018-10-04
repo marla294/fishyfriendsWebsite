@@ -1,0 +1,5 @@
+.fishTank {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 200px);
+	margin: 0 2em;
+}
