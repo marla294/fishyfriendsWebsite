@@ -17,11 +17,17 @@ class Fish extends React.Component {
 		return `/images/fish/${pictureName}.png`;
 	};
 
+	capitalizeFirstLetter = S => {
+		return S[0].toUpperCase() + S.slice(1);
+	};
+
 	render() {
 		return (
 			<div className="fish">
 				<img src={this.getImageSource()} alt="fishPic" />
-				<div className="name">{this.props.name}</div>
+				<div className="name">
+					{this.capitalizeFirstLetter(this.props.name)}
+				</div>
 			</div>
 		);
 	}
