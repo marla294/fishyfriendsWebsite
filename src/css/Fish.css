@@ -1,5 +1,5 @@
 .fish {
-	width: 200px;
+	width: 180px;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	border: 1px solid white;

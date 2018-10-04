@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'fionaregular';
+    src: url('../assets/fonts/Fiona/fiona-regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/Fiona/fiona-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
 	--blue: #33C7FF;
 	--ltgray: #FAFAFA;
@@ -11,4 +19,7 @@ body {
 	color: var(--black);
 	margin: 0;
 	box-sizing: border-box;
+	color: darkblue;
+	font-family: 'fionaregular';
+	font-size: 24px;
 }
