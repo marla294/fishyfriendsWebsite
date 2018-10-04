@@ -3,7 +3,7 @@
 exports[`Fish appear in FishGrid 1`] = `
 <div>
   <div
-    className="fish"
+    className="fish selected"
   >
     <img
       alt="fishPic"
@@ -12,11 +12,11 @@ exports[`Fish appear in FishGrid 1`] = `
     <div
       className="name"
     >
-      dwarf angels
+      Dwarf angels
     </div>
   </div>
   <div
-    className="fish"
+    className="fish selected"
   >
     <img
       alt="fishPic"
@@ -25,7 +25,7 @@ exports[`Fish appear in FishGrid 1`] = `
     <div
       className="name"
     >
-      large angels
+      Large angels
     </div>
   </div>
 </div>

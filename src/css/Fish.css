@@ -1,14 +1,27 @@
 .fish {
-	width: 180px;
+	width: 8em;
 	display: grid;
+	grid-gap: 0.5em;
 	grid-template-columns: auto 1fr;
-	border: 1px solid white;
-	margin: 10px;
+	margin: 0.4em;
+}
+
+.fish:hover {
+	color: yellow;
+	cursor: pointer;
+}
+
+.selected {
+	background: yellow;
+}
+
+.selected:hover {
+	color: darkblue;
 }
 
 .fish > img {
-	width: 50px;
-	margin: 5px;
+	width: 2em;
+	margin: 0.2em;
 }
 
 .fish > .name {

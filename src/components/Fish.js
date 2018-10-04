@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import "../css/Fish.css";
 
 class Fish extends React.Component {
+	state = {
+		selected: true
+	};
+
 	getImageSource = () => {
 		let pictureName = this.props.name;
 
@@ -23,7 +27,7 @@ class Fish extends React.Component {
 
 	render() {
 		return (
-			<div className="fish">
+			<div className={`fish ${this.state.selected ? "selected" : ""}`}>
 				<img src={this.getImageSource()} alt="fishPic" />
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}

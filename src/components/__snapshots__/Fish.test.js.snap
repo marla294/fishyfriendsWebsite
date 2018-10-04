@@ -2,7 +2,7 @@
 
 exports[`Correct fish name appears 1`] = `
 <div
-  className="fish"
+  className="fish selected"
 >
   <img
     alt="fishPic"
