@@ -4,7 +4,7 @@ import "../css/Fish.css";
 
 class Fish extends React.Component {
 	state = {
-		selected: true
+		selected: false
 	};
 
 	getImageSource = () => {
@@ -25,9 +25,16 @@ class Fish extends React.Component {
 		return S[0].toUpperCase() + S.slice(1);
 	};
 
+	selectFish = () => {
+		this.setState({ selected: !this.state.selected });
+	};
+
 	render() {
 		return (
-			<div className={`fish ${this.state.selected ? "selected" : ""}`}>
+			<div
+				className={`fish ${this.state.selected ? "selected" : ""}`}
+				onClick={this.selectFish}
+			>
 				<img src={this.getImageSource()} alt="fishPic" />
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}
