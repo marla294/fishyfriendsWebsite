@@ -8,3 +8,4 @@ test("Correct fish name appears", () => {
 	let tree = component.toJSON();
 	expect(tree).toMatchSnapshot();
 });
+

@@ -3,7 +3,8 @@
 exports[`Fish appear in FishGrid 1`] = `
 <div>
   <div
-    className="fish selected"
+    className="fish "
+    onClick={[Function]}
   >
     <img
       alt="fishPic"
@@ -16,7 +17,8 @@ exports[`Fish appear in FishGrid 1`] = `
     </div>
   </div>
   <div
-    className="fish selected"
+    className="fish "
+    onClick={[Function]}
   >
     <img
       alt="fishPic"

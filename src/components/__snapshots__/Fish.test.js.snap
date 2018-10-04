@@ -2,7 +2,8 @@
 
 exports[`Correct fish name appears 1`] = `
 <div
-  className="fish selected"
+  className="fish "
+  onClick={[Function]}
 >
   <img
     alt="fishPic"
