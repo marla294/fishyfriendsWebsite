@@ -17,7 +17,7 @@ class Home extends React.Component {
 			<div className="home">
 				<h1 className="header">Select fish to compare:</h1>
 				<FishTank fishes={this.state.fishes} />
-				<Button />
+				<div className="buttonWrapper"><Button label={"Calculate"} /></div>
 			</div>
 		);
 	}

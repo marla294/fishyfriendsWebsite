@@ -1,9 +1,17 @@
 .button {
 	width: 10em;
 	height: 3em;
-	background-color: yellow;
+	border: 0.1em solid yellow;
 	border-radius: 1em;
 	display: grid;
 	justify-content: center;
 	align-items: center;
+}
+
+.button:hover {
+	background: yellow;
+}
+
+.button h2 {
+	margin: 0;
 }
