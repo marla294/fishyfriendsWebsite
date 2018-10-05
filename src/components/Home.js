@@ -1,5 +1,6 @@
 import React from "react";
 import FishTank from "./FishTank";
+import Button from "./Button";
 import "../css/Home.css";
 
 class Home extends React.Component {
@@ -16,6 +17,7 @@ class Home extends React.Component {
 			<div className="home">
 				<h1 className="header">Select fish to compare:</h1>
 				<FishTank fishes={this.state.fishes} />
+				<Button />
 			</div>
 		);
 	}
