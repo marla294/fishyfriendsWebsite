@@ -1,0 +1,8 @@
+.home {
+	margin: 0 1em;
+}
+
+.header {
+	display: grid;
+	justify-content: center;
+}
