@@ -5,7 +5,7 @@ import "../css/Button.css";
 class Button extends React.Component {
 	render() {
 		return (
-			<div className="button">
+			<div className="button" onClick={this.props.clickFn}>
 				<h2>{this.props.label}</h2>
 			</div>
 		);
@@ -13,7 +13,8 @@ class Button extends React.Component {
 }
 
 Button.propTypes = {
-	label: PropTypes.string.isRequired
+	label: PropTypes.string.isRequired,
+	clickFn: PropTypes.func.isRequired
 };
 
 export default Button;

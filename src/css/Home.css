@@ -2,7 +2,7 @@
 	margin: 0 1em;
 }
 
-.header {
+.headerWrapper {
 	display: grid;
 	justify-content: center;
 }
