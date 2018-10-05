@@ -7,10 +7,10 @@ class FishTank extends React.Component {
 	state = { selectedFish: [] };
 
 	render() {
-		return <div className="fishTank">{this.renderFish()}</div>;
+		return <div className="fishTank">{this.renderFishTank()}</div>;
 	}
 
-	renderFish = () => {
+	renderFishTank = () => {
 		return this.props.fishes.map(fish => (
 			<div
 				key={fish.Id}
@@ -44,7 +44,7 @@ class FishTank extends React.Component {
 
 	removeIndexFromSelectedFishArray = fishIndex => {
 		let selectedFish = [...this.state.selectedFish];
-		selectedFish.splice(fishIndex, fishIndex + 1);
+		selectedFish.splice(fishIndex, 1);
 		this.setState({ selectedFish });
 	};
 }

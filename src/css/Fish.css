@@ -1,5 +1,5 @@
 .fish {
-	width: 8em;
+	width: 100%;
 	display: grid;
 	grid-gap: 0.5em;
 	grid-template-columns: auto 1fr;
