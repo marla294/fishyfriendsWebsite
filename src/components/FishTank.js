@@ -4,8 +4,6 @@ import Fish from "./Fish";
 import "../css/FishTank.css";
 
 class FishTank extends React.Component {
-	state = { selectedFish: [] };
-
 	render() {
 		return <div className="fishTank">{this.renderFishTank()}</div>;
 	}
@@ -39,16 +37,14 @@ class FishTank extends React.Component {
 	};
 
 	addFishToSelectedFishArray = fish => {
-		let selectedFish = [...this.state.selectedFish];
+		let selectedFish = [...this.props.getSelectedFish()];
 		selectedFish.push(fish);
-		this.setState({ selectedFish });
 		this.props.setSelectedFish(selectedFish);
 	};
 
 	removeIndexFromSelectedFishArray = fishIndex => {
-		let selectedFish = [...this.state.selectedFish];
+		let selectedFish = [...this.props.getSelectedFish()];
 		selectedFish.splice(fishIndex, 1);
-		this.setState({ selectedFish });
 		this.props.setSelectedFish(selectedFish);
 	};
 }
