@@ -50,7 +50,9 @@ class FishTank extends React.Component {
 }
 
 FishTank.propTypes = {
-	fishes: PropTypes.array.isRequired
+	fishes: PropTypes.array.isRequired,
+	setSelectedFish: PropTypes.func.isRequired,
+	getSelectedFish: PropTypes.func.isRequired
 };
 
 export default FishTank;
