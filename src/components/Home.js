@@ -4,7 +4,7 @@ import Button from "./Button";
 import "../css/Home.css";
 
 class Home extends React.Component {
-	state = { fishes: [], compatibility: [] };
+	state = { fishes: [], compatibility: [], selectedFish: [] };
 
 	componentDidMount() {
 		this.fetchAllFish();
@@ -24,13 +24,20 @@ class Home extends React.Component {
 		});
 	};
 
+	setSelectedFish = selectedFish => {
+		this.setState({ selectedFish });
+	};
+
 	render() {
 		return (
 			<div className="home">
 				<div className="headerWrapper">
 					<h1>Select fish to compare:</h1>
 				</div>
-				<FishTank fishes={this.state.fishes} />
+				<FishTank
+					fishes={this.state.fishes}
+					setSelectedFish={this.setSelectedFish}
+				/>
 				<div className="buttonWrapper">
 					<Button
 						label={"Calculate"}

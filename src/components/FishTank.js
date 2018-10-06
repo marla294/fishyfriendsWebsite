@@ -40,12 +40,14 @@ class FishTank extends React.Component {
 		let selectedFish = [...this.state.selectedFish];
 		selectedFish.push(fish);
 		this.setState({ selectedFish });
+		this.props.setSelectedFish(selectedFish);
 	};
 
 	removeIndexFromSelectedFishArray = fishIndex => {
 		let selectedFish = [...this.state.selectedFish];
 		selectedFish.splice(fishIndex, 1);
 		this.setState({ selectedFish });
+		this.props.setSelectedFish(selectedFish);
 	};
 }
 
