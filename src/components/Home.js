@@ -4,7 +4,7 @@ import Button from "./Button";
 import "../css/Home.css";
 
 class Home extends React.Component {
-	state = { fishes: [], compatibility: [], selectedFish: [] };
+	state = { fishes: [], selectedFishes: [], compatibility: [] };
 	url = "http://127.0.0.1:8080/api/";
 
 	componentDidMount() {
@@ -25,12 +25,12 @@ class Home extends React.Component {
 		});
 	};
 
-	setSelectedFish = selectedFish => {
-		this.setState({ selectedFish });
+	setSelectedFishes = selectedFishes => {
+		this.setState({ selectedFishes });
 	};
 
-	getSelectedFish = () => {
-		return this.state.selectedFish;
+	getSelectedFishes = () => {
+		return this.state.selectedFishes;
 	};
 
 	render() {
@@ -41,8 +41,8 @@ class Home extends React.Component {
 				</div>
 				<FishTank
 					fishes={this.state.fishes}
-					setSelectedFish={this.setSelectedFish}
-					getSelectedFish={this.getSelectedFish}
+					setSelectedFishes={this.setSelectedFishes}
+					getSelectedFishes={this.getSelectedFishes}
 				/>
 				<div className="buttonWrapper">
 					<Button

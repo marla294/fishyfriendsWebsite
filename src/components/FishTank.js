@@ -32,27 +32,27 @@ class FishTank extends React.Component {
 
 	getFishIndexFromSelectedFishArray = fish => {
 		return this.props
-			.getSelectedFish()
+			.getSelectedFishes()
 			.findIndex(f => f.Name === fish.Name);
 	};
 
 	addFishToSelectedFishArray = fish => {
-		let selectedFish = [...this.props.getSelectedFish()];
-		selectedFish.push(fish);
-		this.props.setSelectedFish(selectedFish);
+		let selectedFishes = [...this.props.getSelectedFishes()];
+		selectedFishes.push(fish);
+		this.props.setSelectedFishes(selectedFishes);
 	};
 
 	removeIndexFromSelectedFishArray = fishIndex => {
-		let selectedFish = [...this.props.getSelectedFish()];
-		selectedFish.splice(fishIndex, 1);
-		this.props.setSelectedFish(selectedFish);
+		let selectedFishes = [...this.props.getSelectedFishes()];
+		selectedFishes.splice(fishIndex, 1);
+		this.props.setSelectedFishes(selectedFishes);
 	};
 }
 
 FishTank.propTypes = {
 	fishes: PropTypes.array.isRequired,
-	setSelectedFish: PropTypes.func.isRequired,
-	getSelectedFish: PropTypes.func.isRequired
+	setSelectedFishes: PropTypes.func.isRequired,
+	getSelectedFishes: PropTypes.func.isRequired
 };
 
 export default FishTank;
