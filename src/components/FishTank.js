@@ -33,7 +33,9 @@ class FishTank extends React.Component {
 	};
 
 	getFishIndexFromSelectedFishArray = fish => {
-		return this.state.selectedFish.findIndex(f => f.Name === fish.Name);
+		return this.props
+			.getSelectedFish()
+			.findIndex(f => f.Name === fish.Name);
 	};
 
 	addFishToSelectedFishArray = fish => {

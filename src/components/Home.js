@@ -28,6 +28,10 @@ class Home extends React.Component {
 		this.setState({ selectedFish });
 	};
 
+	getSelectedFish = () => {
+		return this.state.selectedFish;
+	};
+
 	render() {
 		return (
 			<div className="home">
@@ -37,6 +41,7 @@ class Home extends React.Component {
 				<FishTank
 					fishes={this.state.fishes}
 					setSelectedFish={this.setSelectedFish}
+					getSelectedFish={this.getSelectedFish}
 				/>
 				<div className="buttonWrapper">
 					<Button
