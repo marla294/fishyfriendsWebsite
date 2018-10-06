@@ -5,20 +5,21 @@ import "../css/Home.css";
 
 class Home extends React.Component {
 	state = { fishes: [], compatibility: [], selectedFish: [] };
+	url = "http://127.0.0.1:8080/api/";
 
 	componentDidMount() {
 		this.fetchAllFish();
 	}
 
 	fetchAllFish = () => {
-		fetch("http://127.0.0.1:8080/api/fish").then(res => {
+		fetch(this.url + "fish").then(res => {
 			res.json().then(r => this.setState({ fishes: r }));
 		});
 	};
 
 	fetchFishCompatibility = () => {
 		fetch(
-			"http://127.0.0.1:8080/api/Compatibility?fishNames=clown&fishNames=groupers"
+			this.url + "Compatibility?fishNames=clown&fishNames=groupers"
 		).then(res => {
 			res.json().then(r => this.setState({ compatibility: r }));
 		});
