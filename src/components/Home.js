@@ -18,11 +18,27 @@ class Home extends React.Component {
 	};
 
 	fetchFishCompatibility = () => {
-		fetch(
-			this.url + "Compatibility?fishNames=clown&fishNames=groupers"
-		).then(res => {
+		let fetchURL = this.url + this.createFishCompatibilityURL();
+
+		fetch(fetchURL).then(res => {
 			res.json().then(r => this.setState({ compatibility: r }));
 		});
+	};
+
+	createFishCompatibilityURL = () => {
+		let fishNames = [];
+		let compatibilityURLString = "Compatibility?";
+
+		this.state.selectedFishes.forEach(fish => {
+			fishNames.push(fish.Name);
+		});
+
+		fishNames.forEach(name => {
+			compatibilityURLString =
+				compatibilityURLString + `fishNames=${name}&`;
+		});
+
+		return compatibilityURLString.slice(0, -1);
 	};
 
 	setSelectedFishes = selectedFishes => {
