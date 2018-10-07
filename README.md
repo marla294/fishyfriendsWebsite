@@ -15,3 +15,9 @@ This will be the front end of the Fish Friends application.
 ## References
 
 Thank you https://www.ocellarisclownfish.com/compatibility/ !
+
+## Images
+
+### Selecting Fish to Compare
+
+![Selecting Fish](SelectingFish.png?raw=true "Selecting Fish")
