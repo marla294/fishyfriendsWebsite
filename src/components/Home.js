@@ -7,6 +7,27 @@ class Home extends React.Component {
 	state = { fishes: [], selectedFishes: [], compatibility: [] };
 	url = "http://127.0.0.1:8080/api/";
 
+	render() {
+		return (
+			<div className="home">
+				<div className="headerWrapper">
+					<h1>Select fish to compare:</h1>
+				</div>
+				<FishTank
+					fishes={this.state.fishes}
+					setSelectedFishes={this.setSelectedFishes}
+					getSelectedFishes={this.getSelectedFishes}
+				/>
+				<div className="buttonWrapper">
+					<Button
+						label={"Calculate"}
+						clickFn={this.fetchFishCompatibility}
+					/>
+				</div>
+			</div>
+		);
+	}
+
 	componentDidMount() {
 		this.fetchAllFish();
 	}
@@ -42,26 +63,7 @@ class Home extends React.Component {
 		return this.state.selectedFishes;
 	};
 
-	render() {
-		return (
-			<div className="home">
-				<div className="headerWrapper">
-					<h1>Select fish to compare:</h1>
-				</div>
-				<FishTank
-					fishes={this.state.fishes}
-					setSelectedFishes={this.setSelectedFishes}
-					getSelectedFishes={this.getSelectedFishes}
-				/>
-				<div className="buttonWrapper">
-					<Button
-						label={"Calculate"}
-						clickFn={this.fetchFishCompatibility}
-					/>
-				</div>
-			</div>
-		);
-	}
+	
 }
 
 export default Home;

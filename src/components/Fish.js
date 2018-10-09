@@ -7,6 +7,24 @@ class Fish extends React.Component {
 		selected: false
 	};
 
+	render() {
+		return (
+			<div
+				className={`fish ${this.state.selected ? "selected" : ""}`}
+				onClick={this.selectFish}
+			>
+				<img src={this.getImageSource()} alt="fishPic" />
+				<div className="name">
+					{this.capitalizeFirstLetter(this.props.name)}
+				</div>
+			</div>
+		);
+	}
+
+	selectFish = () => {
+		this.setState({ selected: !this.state.selected });
+	};
+
 	getImageSource = () => {
 		let pictureName = this.props.name;
 
@@ -25,23 +43,7 @@ class Fish extends React.Component {
 		return S[0].toUpperCase() + S.slice(1);
 	};
 
-	selectFish = () => {
-		this.setState({ selected: !this.state.selected });
-	};
-
-	render() {
-		return (
-			<div
-				className={`fish ${this.state.selected ? "selected" : ""}`}
-				onClick={this.selectFish}
-			>
-				<img src={this.getImageSource()} alt="fishPic" />
-				<div className="name">
-					{this.capitalizeFirstLetter(this.props.name)}
-				</div>
-			</div>
-		);
-	}
+	
 }
 
 Fish.propTypes = {
@@ -49,5 +51,3 @@ Fish.propTypes = {
 };
 
 export default Fish;
-
-// onClick={this.selectFish}
