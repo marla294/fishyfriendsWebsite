@@ -17,6 +17,7 @@ class Home extends React.Component {
 					fishes={this.state.fishes}
 					setSelectedFishes={this.setSelectedFishes}
 					getSelectedFishes={this.getSelectedFishes}
+					compatibility={this.state.compatibility}
 				/>
 				<div className="buttonWrapper">
 					<Button

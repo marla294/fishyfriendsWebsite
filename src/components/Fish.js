@@ -4,8 +4,7 @@ import "../css/Fish.css";
 
 class Fish extends React.Component {
 	state = {
-		selected: false,
-		compatible: null
+		selected: false
 	};
 
 	render() {
@@ -28,7 +27,7 @@ class Fish extends React.Component {
 			return "fish selected";
 		}
 
-		switch (this.state.compatible)
+		switch (this.props.compatible)
 		{
 			case "Yes":
 				return "fish compatible-yes";

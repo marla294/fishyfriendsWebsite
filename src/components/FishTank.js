@@ -15,7 +15,7 @@ class FishTank extends React.Component {
 				className="fishWrapper"
 				onClick={() => this.clickOnAFish(fish)}
 			>
-				<Fish key={fish.Id} name={fish.Name} />
+				<Fish key={fish.Id} name={fish.Name} compatible={this.getCompatible(fish)}/>
 			</div>
 		));
 	};
@@ -47,6 +47,17 @@ class FishTank extends React.Component {
 		selectedFishes.splice(fishIndex, 1);
 		this.props.setSelectedFishes(selectedFishes);
 	};
+
+	getCompatible = fish => {
+		let compatibility = this.props.compatibility.find(c => c.MainFish.Id === fish.Id);
+
+		if (compatibility !== undefined)
+		{
+			return compatibility.WorstCompatibility;
+		}
+		
+		return null;
+	}
 }
 
 FishTank.propTypes = {
