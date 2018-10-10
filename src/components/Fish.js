@@ -4,13 +4,14 @@ import "../css/Fish.css";
 
 class Fish extends React.Component {
 	state = {
-		selected: false
+		selected: false,
+		compatible: null
 	};
 
 	render() {
 		return (
 			<div
-				className={`fish ${this.state.selected ? "selected" : ""}`}
+				className={this.getFishClasses()}
 				onClick={this.selectFish}
 			>
 				<img src={this.getImageSource()} alt="fishPic" />
@@ -19,6 +20,25 @@ class Fish extends React.Component {
 				</div>
 			</div>
 		);
+	}
+
+	getFishClasses = () => {
+		if (this.state.selected)
+		{
+			return "fish selected";
+		}
+
+		switch (this.state.compatible)
+		{
+			case "Yes":
+				return "fish compatible-yes";
+			case "Maybe":
+				return "fish compatible-maybe";
+			case "No":
+				return "fish compatible-no";
+			default:
+				return "fish";
+		}
 	}
 
 	selectFish = () => {

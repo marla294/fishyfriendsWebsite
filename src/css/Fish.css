@@ -15,7 +15,19 @@
 	background: yellow;
 }
 
-.selected:hover {
+.compatible-yes {
+	background-color: lightgreen;
+}
+
+.compatible-maybe {
+	background-color: orange;
+}
+
+.compatible-no {
+	background-color: red;
+}
+
+.selected:hover, .compatible-yes:hover, .compatible-maybe:hover, .compatible-no:hover {
 	color: darkblue;
 }
 
