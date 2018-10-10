@@ -62,6 +62,11 @@ class Fish extends React.Component {
 		return S[0].toUpperCase() + S.slice(1);
 	};
 
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.selected !== prevState.selected) {
+			this.props.fetchFishCompatibility();
+		}
+	}
 	
 }
 
