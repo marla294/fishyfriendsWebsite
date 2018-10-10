@@ -67,7 +67,8 @@ FishTank.propTypes = {
 	fishes: PropTypes.array.isRequired,
 	setSelectedFishes: PropTypes.func.isRequired,
 	getSelectedFishes: PropTypes.func.isRequired,
-	compatibility: PropTypes.array.isRequired
+	compatibility: PropTypes.array.isRequired,
+	fetchFishCompatibility: PropTypes.func.isRequired
 };
 
 export default FishTank;

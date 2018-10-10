@@ -1,6 +1,5 @@
 import React from "react";
 import FishTank from "./FishTank";
-import Button from "./Button";
 import "../css/Home.css";
 
 class Home extends React.Component {
@@ -20,12 +19,6 @@ class Home extends React.Component {
 					compatibility={this.state.compatibility}
 					fetchFishCompatibility={this.fetchFishCompatibility}
 				/>
-				<div className="buttonWrapper">
-					<Button
-						label={"Calculate"}
-						clickFn={this.fetchFishCompatibility}
-					/>
-				</div>
 			</div>
 		);
 	}
