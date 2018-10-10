@@ -55,15 +55,16 @@ class FishTank extends React.Component {
 		{
 			return compatibility.WorstCompatibility;
 		}
-		
-		return null;
+
+		return "";
 	}
 }
 
 FishTank.propTypes = {
 	fishes: PropTypes.array.isRequired,
 	setSelectedFishes: PropTypes.func.isRequired,
-	getSelectedFishes: PropTypes.func.isRequired
+	getSelectedFishes: PropTypes.func.isRequired,
+	compatibility: PropTypes.array.isRequired
 };
 
 export default FishTank;
