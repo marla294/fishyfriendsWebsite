@@ -5,7 +5,7 @@
 	grid-template-columns: auto 1fr;
 	border-radius: 1em;
 	box-sizing: border-box;
-	border: 2px solid var(--blue);
+	border: 0.08em solid var(--blue);
 }
 
 .fish:hover {
@@ -15,23 +15,23 @@
 
 .selected {
 	color: var(--yellow);
-	border: 2px solid var(--yellow);
+	border: 0.08em solid var(--yellow);
 	box-sizing: border-box;
 }
 
 .compatible-yes {
 	background-color: var(--green);
-	border: 2px solid var(--green);
+	border: 0.08em solid var(--green);
 }
 
 .compatible-maybe {
 	background-color: var(--yellow);
-	border: 2px solid var(--yellow);
+	border: 0.08em solid var(--yellow);
 }
 
 .compatible-no {
 	background-color: var(--red);
-	border: 2px solid var(--red);
+	border: 0.08em solid var(--red);
 }
 
 .compatible-yes:hover, .compatible-maybe:hover, .compatible-no:hover {
@@ -50,4 +50,9 @@
 .fish > .name {
 	align-self: center;
 	justify-self: left;
+}
+
+.small {
+	height: 2.6em;
+	font-size: 0.75em;
 }

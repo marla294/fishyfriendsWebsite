@@ -1,5 +1,6 @@
 import React from "react";
 import Fish from "./Fish";
+import Compatibility from "./Compatibility";
 import "../css/FishTank.css";
 
 class FishTank extends React.Component {
@@ -7,13 +8,13 @@ class FishTank extends React.Component {
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
-		return <div className="fishTank">{this.renderFishTank()}</div>;
+		return <div><div className="fishTank">{this.renderFishTank()}</div><Compatibility/></div>;
 	}
 
 	renderFishTank = () => {
 		return this.state.compatibility.map(f => { 
 				let fish = f.MainFish;
-				return (<Fish key={fish.Id} name={fish.Name} fishClassName={this.getFishClassName(fish)} clickFn={() => this.clickOnAFish(fish)}/>);
+				return (<div><Fish key={fish.Id} name={fish.Name} fishClassName={this.getFishClassName(fish)} clickFn={() => this.clickOnAFish(fish)}/></div>);
 			}
 		);
 	};
