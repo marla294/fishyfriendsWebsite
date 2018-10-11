@@ -1,10 +1,6 @@
 .home {
 	margin: 0 1em;
-}
-
-.headerWrapper {
 	display: grid;
-	justify-content: center;
 }
 
 .buttonWrapper {

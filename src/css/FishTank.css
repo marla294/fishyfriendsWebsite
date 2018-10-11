@@ -3,8 +3,8 @@
 	grid-template-columns: repeat(auto-fit, 200px);
 	justify-content: center;
 	grid-gap: 0.4em;
-}
-
-.fishWrapper {
-	border-radius: 1em;
+	width: 1250px;
+	justify-self: center;
+	margin-top: 40px;
+	padding: 20px;
 }

@@ -5,7 +5,7 @@ import "../css/Fish.css";
 class Fish extends React.Component {
 	render() {
 		return (
-			<div className={this.props.fishClassName}>
+			<div className={this.props.fishClassName} onClick={this.props.clickFn}>
 				<img src={this.getImageSource()} alt="fishPic" />
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}
@@ -36,7 +36,8 @@ class Fish extends React.Component {
 
 Fish.propTypes = {
 	name: PropTypes.string.isRequired,
-	fishClassName: PropTypes.string.isRequired
+	fishClassName: PropTypes.string.isRequired,
+	clickFn: PropTypes.func.isRequired
 };
 
 export default Fish;

@@ -4,31 +4,42 @@
 	grid-gap: 0.5em;
 	grid-template-columns: auto 1fr;
 	border-radius: 1em;
+	box-sizing: border-box;
+	border: 2px solid var(--blue);
 }
 
 .fish:hover {
-	color: yellow;
+	color: var(--yellow);
 	cursor: pointer;
 }
 
 .selected {
-	background: yellow;
+	color: var(--yellow);
+	border: 2px solid var(--yellow);
+	box-sizing: border-box;
 }
 
 .compatible-yes {
-	background-color: lightgreen;
+	background-color: var(--green);
+	border: 2px solid var(--green);
 }
 
 .compatible-maybe {
-	background-color: orange;
+	background-color: var(--yellow);
+	border: 2px solid var(--yellow);
 }
 
 .compatible-no {
-	background-color: red;
+	background-color: var(--red);
+	border: 2px solid var(--red);
 }
 
-.selected:hover, .compatible-yes:hover, .compatible-maybe:hover, .compatible-no:hover {
+.compatible-yes:hover, .compatible-maybe:hover, .compatible-no:hover {
 	color: darkblue;
+}
+
+.selected:hover {
+	color: var(--yellow);
 }
 
 .fish > img {

@@ -10,11 +10,14 @@
 	--blue: #33C7FF;
 	--ltgray: #FAFAFA;
 	--black: #181b21;
+	--red: #FF634B;
+	--yellow: #F9FD6E;
+	--green: lightgreen;
 }
 
 body {
 	background: var(--blue);
-	color: var(--black);
+	color: darkblue;
 	margin: 0;
 	box-sizing: border-box;
 	color: darkblue;
