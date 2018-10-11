@@ -3,7 +3,7 @@ import FishTank from "./FishTank";
 import "../css/Home.css";
 
 class Home extends React.Component {
-	state = { fishes: [], selectedFishes: [], compatibility: [] };
+	state = { selectedFishes: [], compatibility: [] };
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
@@ -13,7 +13,6 @@ class Home extends React.Component {
 					<h1>Select fish to compare:</h1>
 				</div>
 				<FishTank
-					fishes={this.state.fishes}
 					setSelectedFishes={this.setSelectedFishes}
 					getSelectedFishes={this.getSelectedFishes}
 					compatibility={this.state.compatibility}
@@ -24,14 +23,8 @@ class Home extends React.Component {
 	}
 
 	componentDidMount() {
-		this.fetchAllFish();
+		this.fetchFishCompatibility();
 	}
-
-	fetchAllFish = () => {
-		fetch(this.url + "fish").then(res => {
-			res.json().then(r => this.setState({ fishes: r }));
-		});
-	};
 
 	fetchFishCompatibility = () => {
 		fetch(this.getFishCompatibilityURL()).then(res => {

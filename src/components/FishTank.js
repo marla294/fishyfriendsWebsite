@@ -9,13 +9,13 @@ class FishTank extends React.Component {
 	}
 
 	renderFishTank = () => {
-		return this.props.fishes.map(fish => (
+		return this.props.compatibility.map(fish => (
 			<div
-				key={fish.Id}
+				key={fish.MainFish.Id}
 				className="fishWrapper"
-				onClick={() => this.clickOnAFish(fish)}
+				onClick={() => this.clickOnAFish(fish.MainFish)}
 			>
-				<Fish key={fish.Id} name={fish.Name} compatible={this.getCompatible(fish)} fetchFishCompatibility={this.props.fetchFishCompatibility} />
+				<Fish key={fish.MainFish.Id} name={fish.MainFish.Name} compatible={this.getCompatible(fish.MainFish)} fetchFishCompatibility={this.props.fetchFishCompatibility} />
 			</div>
 		));
 	};
@@ -64,7 +64,6 @@ class FishTank extends React.Component {
 }
 
 FishTank.propTypes = {
-	fishes: PropTypes.array.isRequired,
 	setSelectedFishes: PropTypes.func.isRequired,
 	getSelectedFishes: PropTypes.func.isRequired,
 	compatibility: PropTypes.array.isRequired,
