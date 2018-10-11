@@ -24,6 +24,12 @@ class FishTank extends React.Component {
 		);
 	};
 
+	componentDidUpdate(prevProps, prevState) {
+		if (this.props.compatibility !== prevProps.compatibility) {
+			this.props.fetchFishCompatibility();
+		}
+	}
+
 	clickOnAFish = fish => {
 		const fishIndex = this.getFishIndexFromSelectedFishArray(fish);
 

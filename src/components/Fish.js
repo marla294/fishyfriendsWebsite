@@ -22,9 +22,7 @@ class Fish extends React.Component {
 	}
 
 	getFishClasses = () => {
-		let fishClasses = "fish";
-
-		fishClasses = this.getFishClassesIsSelected();
+		let fishClasses = this.getFishClassesIsSelected();
 
 		if (fishClasses === "fish")
 		{
@@ -74,12 +72,6 @@ class Fish extends React.Component {
 	capitalizeFirstLetter = S => {
 		return S[0].toUpperCase() + S.slice(1);
 	};
-
-	componentDidUpdate(prevProps, prevState) {
-		if (this.state.selected !== prevState.selected) {
-			this.props.fetchFishCompatibility();
-		}
-	}
 	
 }
 
