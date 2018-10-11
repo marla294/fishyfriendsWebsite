@@ -77,8 +77,7 @@ class Fish extends React.Component {
 
 Fish.propTypes = {
 	name: PropTypes.string.isRequired,
-	compatible: PropTypes.string.isRequired,
-	fetchFishCompatibility: PropTypes.func.isRequired
+	compatible: PropTypes.string.isRequired
 };
 
 export default Fish;
