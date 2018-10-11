@@ -9,15 +9,19 @@ class FishTank extends React.Component {
 	}
 
 	renderFishTank = () => {
-		return this.props.compatibility.map(fish => (
-			<div
-				key={fish.MainFish.Id}
-				className="fishWrapper"
-				onClick={() => this.clickOnAFish(fish.MainFish)}
-			>
-				<Fish key={fish.MainFish.Id} name={fish.MainFish.Name} compatible={this.getCompatible(fish.MainFish)} fetchFishCompatibility={this.props.fetchFishCompatibility} />
-			</div>
-		));
+		return this.props.compatibility.map(f => { 
+				let fish = f.MainFish;
+				return (
+					<div
+						key={fish.Id}
+						className="fishWrapper"
+						onClick={() => this.clickOnAFish(fish)}
+					>
+						<Fish key={fish.Id} name={fish.Name} compatible={this.getCompatible(fish)} fetchFishCompatibility={this.props.fetchFishCompatibility} />
+					</div>
+				);
+			}
+		);
 	};
 
 	clickOnAFish = fish => {
@@ -51,12 +55,9 @@ class FishTank extends React.Component {
 	getCompatible = fish => {
 		let compatibility = this.props.compatibility.find(c => c.MainFish.Id === fish.Id);
 
-		if (compatibility !== undefined)
+		if (compatibility !== undefined && compatibility.WorstCompatibility)
 		{
-			if (compatibility.WorstCompatibility)
-			{
-				return compatibility.WorstCompatibility;
-			}
+			return compatibility.WorstCompatibility;
 		}
 
 		return "";

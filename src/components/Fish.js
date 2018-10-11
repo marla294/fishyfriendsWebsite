@@ -22,22 +22,35 @@ class Fish extends React.Component {
 	}
 
 	getFishClasses = () => {
+		let fishClasses = "fish";
+
+		fishClasses = this.getFishClassesIsSelected();
+
+		if (fishClasses === "fish")
+		{
+			fishClasses = this.getFishClassesIsCompatible();
+		}
+
+		return fishClasses;
+	}
+
+	getFishClassesIsSelected = () => {
 		if (this.state.selected)
 		{
 			return "fish selected";
 		}
+		return "fish";
+	}
 
-		switch (this.props.compatible)
+	getFishClassesIsCompatible = () => {
+		let compatible = this.props.compatible.toLowerCase();
+		let hasCompatible = ["yes", "maybe", "no"].findIndex(ans => ans === compatible);
+
+		if (hasCompatible !== -1)
 		{
-			case "Yes":
-				return "fish compatible-yes";
-			case "Maybe":
-				return "fish compatible-maybe";
-			case "No":
-				return "fish compatible-no";
-			default:
-				return "fish";
+			return "fish compatible-" + compatible;
 		}
+		return "fish";
 	}
 
 	selectFish = () => {
