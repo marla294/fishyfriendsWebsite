@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import Fish from "./Fish";
 import "../css/FishTank.css";
 
@@ -20,7 +19,7 @@ class FishTank extends React.Component {
 						className="fishWrapper"
 						onClick={() => this.clickOnAFish(fish)}
 					>
-						<Fish key={fish.Id} name={fish.Name} compatible={this.getCompatible(fish)}/>
+						<Fish key={fish.Id} name={fish.Name} fishClassName={this.getFishClassName(fish)}/>
 					</div>
 				);
 			}
@@ -82,6 +81,38 @@ class FishTank extends React.Component {
 		this.setState({ selectedFishes });
 	};
 
+	getFishClassName = fish => {
+		let fishClassName = this.getFishClassNameIsSelected(fish);
+
+		if (fishClassName === "fish")
+		{
+			fishClassName = this.getFishClassNameIsCompatible(fish);
+		}
+
+		return fishClassName;
+	};
+
+	getFishClassNameIsSelected = fish => {
+		let selectedFishIndex = this.getFishIndexFromSelectedFishArray(fish);
+
+		if (selectedFishIndex !== -1)
+		{
+			return "fish selected";
+		}
+		return "fish";
+	};
+
+	getFishClassNameIsCompatible = fish => {
+		let compatible = this.getCompatible(fish).toLowerCase();
+		let hasCompatible = ["yes", "maybe", "no"].findIndex(ans => ans === compatible);
+
+		if (hasCompatible !== -1)
+		{
+			return "fish compatible-" + compatible;
+		}
+		return "fish";
+	};
+
 	getCompatible = fish => {
 		let compatibility = this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
 
@@ -92,13 +123,8 @@ class FishTank extends React.Component {
 
 		return "";
 	}
-}
 
-// FishTank.propTypes = {
-// 	setSelectedFishes: PropTypes.func.isRequired,
-// 	getSelectedFishes: PropTypes.func.isRequired,
-// 	compatibility: PropTypes.array.isRequired,
-// 	fetchFishCompatibility: PropTypes.func.isRequired
-// };
+
+}
 
 export default FishTank;

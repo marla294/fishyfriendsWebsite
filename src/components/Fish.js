@@ -3,16 +3,9 @@ import PropTypes from "prop-types";
 import "../css/Fish.css";
 
 class Fish extends React.Component {
-	state = {
-		selected: false
-	};
-
 	render() {
 		return (
-			<div
-				className={this.getFishClasses()}
-				onClick={this.selectFish}
-			>
+			<div className={this.props.fishClassName}>
 				<img src={this.getImageSource()} alt="fishPic" />
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}
@@ -20,40 +13,6 @@ class Fish extends React.Component {
 			</div>
 		);
 	}
-
-	getFishClasses = () => {
-		let fishClasses = this.getFishClassesIsSelected();
-
-		if (fishClasses === "fish")
-		{
-			fishClasses = this.getFishClassesIsCompatible();
-		}
-
-		return fishClasses;
-	}
-
-	getFishClassesIsSelected = () => {
-		if (this.state.selected)
-		{
-			return "fish selected";
-		}
-		return "fish";
-	}
-
-	getFishClassesIsCompatible = () => {
-		let compatible = this.props.compatible.toLowerCase();
-		let hasCompatible = ["yes", "maybe", "no"].findIndex(ans => ans === compatible);
-
-		if (hasCompatible !== -1)
-		{
-			return "fish compatible-" + compatible;
-		}
-		return "fish";
-	}
-
-	selectFish = () => {
-		this.setState({ selected: !this.state.selected });
-	};
 
 	getImageSource = () => {
 		let pictureName = this.props.name;
@@ -77,7 +36,7 @@ class Fish extends React.Component {
 
 Fish.propTypes = {
 	name: PropTypes.string.isRequired,
-	compatible: PropTypes.string.isRequired
+	fishClassName: PropTypes.string.isRequired
 };
 
 export default Fish;
