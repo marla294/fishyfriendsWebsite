@@ -1,6 +1,8 @@
 .compatibility {
-	width: 4.17em;
-	background: darkblue;
+	width: 5.7em;
+	background: var(--ltgray);
 	padding: 0.417em;
 	border-radius: 0.5em;
+	display: grid;
+	grid-gap: 0.4em;
 }

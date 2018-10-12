@@ -55,4 +55,5 @@
 .small {
 	height: 2.6em;
 	font-size: 0.75em;
+	grid-gap: 0.1em;
 }

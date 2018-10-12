@@ -8,13 +8,18 @@ class FishTank extends React.Component {
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
-		return <div><div className="fishTank">{this.renderFishTank()}</div><Compatibility/></div>;
+		return <div><div className="fishTank">{this.renderFishTank()}</div><Compatibility selected={this.state.selectedFishes} /></div>;
 	}
 
 	renderFishTank = () => {
 		return this.state.compatibility.map(f => { 
 				let fish = f.MainFish;
-				return (<div><Fish key={fish.Id} name={fish.Name} fishClassName={this.getFishClassName(fish)} clickFn={() => this.clickOnAFish(fish)}/></div>);
+				return (<Fish 
+						key={fish.Id} 
+						name={fish.Name} 
+						fishClassName={this.getFishClassName(fish)} 
+						clickFn={() => this.clickOnAFish(fish)}
+				/>);
 			}
 		);
 	};
@@ -107,7 +112,7 @@ class FishTank extends React.Component {
 	};
 
 	getCompatible = fish => {
-		let compatibility = this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
+		let compatibility = this.getComptaibility(fish);
 
 		if (compatibility !== undefined && compatibility.WorstCompatibility)
 		{
@@ -115,7 +120,11 @@ class FishTank extends React.Component {
 		}
 
 		return "";
-	}
+	};
+
+	getCompatibility = fish => {
+		return this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
+	};
 
 
 }
