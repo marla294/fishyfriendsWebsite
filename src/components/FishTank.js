@@ -112,7 +112,7 @@ class FishTank extends React.Component {
 	};
 
 	getCompatible = fish => {
-		let compatibility = this.getComptaibility(fish);
+		let compatibility = this.getCompatibility(fish);
 
 		if (compatibility !== undefined && compatibility.WorstCompatibility)
 		{
