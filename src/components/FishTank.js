@@ -14,9 +14,8 @@ class FishTank extends React.Component {
 	renderFishTank = () => {
 		return this.state.compatibility.map(f => { 
 				let fish = f.MainFish;
-				return (<div>
+				return (<div key={fish.Id}>
 						<Fish 
-						key={fish.Id} 
 						name={fish.Name} 
 						fishClassName={this.getFishClassName(fish)} 
 						clickFn={() => this.clickOnAFish(fish)}
