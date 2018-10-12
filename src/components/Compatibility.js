@@ -4,7 +4,7 @@ import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
 	render() {
-		return (<div className="compatibility">{this.renderFish()}</div>);
+		return (<div className={this.showCompatibility()}>{this.renderFish()}</div>);
 	}
 
 	renderFish = () => {
@@ -17,6 +17,14 @@ class Compatibility extends React.Component {
 					clickFn={()=>{}}
 			/>);
 		});
+	};
+
+	showCompatibility = () => {
+		if (this.props.show) {
+			return "compatibility show";
+		} else {
+			return "compatibility";
+		}
 	};
 
 	getFishClassName = compatibility => {

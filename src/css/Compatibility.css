@@ -5,4 +5,9 @@
 	border-radius: 0.5em;
 	display: grid;
 	grid-gap: 0.4em;
+	display: none;
+}
+
+.show {
+	display: block;
 }

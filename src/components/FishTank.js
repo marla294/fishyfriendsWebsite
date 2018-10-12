@@ -4,7 +4,7 @@ import Compatibility from "./Compatibility";
 import "../css/FishTank.css";
 
 class FishTank extends React.Component {
-	state = { selectedFishes: [], compatibility: [] };
+	state = { selectedFishes: [], compatibility: [], hoverFish: null };
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
@@ -15,12 +15,16 @@ class FishTank extends React.Component {
 		return this.state.compatibility.map(f => { 
 				let fish = f.MainFish;
 				return (<div key={fish.Id}>
-						<Fish 
-						name={fish.Name} 
-						fishClassName={this.getFishClassName(fish)} 
-						clickFn={() => this.clickOnAFish(fish)}
-						/>
-						<Compatibility selected={this.state.selectedFishes} compatibility={this.getCompatibility(fish)} />
+							<Fish 
+								name={fish.Name} 
+								fishClassName={this.getFishClassName(fish)} 
+								clickFn={() => this.clickOnAFish(fish)}
+								mouseOverFn={() => this.setHoverFish(fish)}
+							/>
+							<Compatibility 
+								compatibility={this.getCompatibility(fish)} 
+								show={this.showCompatibility(fish)}
+							/>
 						</div>
 				);
 			}
@@ -129,6 +133,25 @@ class FishTank extends React.Component {
 		return this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
 	};
 
+	setHoverFish = fish => {
+		this.setState({ hoverFish: fish });
+	};
+
+	showCompatibility = fish => {
+		if (this.state.selectedFishes.length === 0)
+		{
+			return false;
+		}
+
+		if (fish === this.state.hoverFish)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	};
 
 }
 

@@ -5,7 +5,7 @@ import "../css/Fish.css";
 class Fish extends React.Component {
 	render() {
 		return (
-			<div className={this.props.fishClassName} onClick={this.props.clickFn} onMouseOver={() => {console.log("hi");}}>
+			<div className={this.props.fishClassName} onClick={this.props.clickFn} onMouseOver={this.props.mouseOverFn}>
 				<img src={this.getImageSource()} alt="fishPic" />
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}
