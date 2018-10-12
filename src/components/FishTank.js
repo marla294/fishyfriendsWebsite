@@ -8,18 +8,22 @@ class FishTank extends React.Component {
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
-		return <div><div className="fishTank">{this.renderFishTank()}</div><Compatibility selected={this.state.selectedFishes} /></div>;
+		return <div className="fishTank">{this.renderFishTank()}</div>;
 	}
 
 	renderFishTank = () => {
 		return this.state.compatibility.map(f => { 
 				let fish = f.MainFish;
-				return (<Fish 
+				return (<div>
+						<Fish 
 						key={fish.Id} 
 						name={fish.Name} 
 						fishClassName={this.getFishClassName(fish)} 
 						clickFn={() => this.clickOnAFish(fish)}
-				/>);
+						/>
+						<Compatibility selected={this.state.selectedFishes} compatibility={this.getCompatibility(fish)} />
+						</div>
+				);
 			}
 		);
 	};

@@ -8,18 +8,45 @@ class Compatibility extends React.Component {
 	}
 
 	renderFish = () => {
-		return this.props.selected.map(fish => {
+		return this.props.compatibility.CompatibilityList.map(C => {
+			let fish = C.SelectedFish;
 			return (<Fish
 					key={fish.Id}
 					name={fish.Name}
-					fishClassName={"fish compatible-yes small"}
+					fishClassName={this.getFishClassName(C)}
 					clickFn={()=>{}}
 			/>);
 		});
+	};
+
+	getFishClassName = compatibility => {
+		let compatible = compatibility.Compatible;
+		let className = "fish small compatible-";
+
+		return className + this.getFishClassNameCompatible(compatible);
+	};
+
+	getFishClassNameCompatible = compatible => {
+		let returnSt = "";
+
+		switch (compatible) {
+			case "Yes":
+				returnSt = "yes";
+				break;
+			case "Maybe":
+				returnSt = "maybe";
+				break;
+			case "No":
+				returnSt = "no";
+				break;
+			default:
+				returnSt = "";
+				break;
+		}
+
+		return returnSt;
 	}
 
 }
 
 export default Compatibility;
-
-// <Fish name="Clown" fishClassName="fish compatible-yes small" clickFn=""/>
