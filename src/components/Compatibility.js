@@ -6,7 +6,10 @@ class Compatibility extends React.Component {
 	render() {
 		return (
 				<div className={this.showCompatibility()}>
-					{this.renderFish()}
+					<div>Compatibility</div>
+					<div className="compatibilityContainer">
+						{this.renderFish()}
+					</div>
 				</div>
 			);
 	}
@@ -17,47 +20,23 @@ class Compatibility extends React.Component {
 			return (<Fish
 					key={fish.Id}
 					name={fish.Name}
-					fishClassName={this.getFishClassName(C)}
+					fishClassName={this.getFishClassName(C.Compatible)}
 					clickFn={()=>{}}
 			/>);
 		});
 	};
 
 	showCompatibility = () => {
-		if (this.props.show) {
-			return "compatibility show";
-		} else {
-			return "compatibility";
-		}
+		let show = this.props.show ? " show" : "";
+
+		return "compatibility" + show;
 	};
 
-	getFishClassName = compatibility => {
-		let compatible = compatibility.Compatible;
+	getFishClassName = compatible => {
 		let className = "fish small compatible-";
 
-		return className + this.getFishClassNameCompatible(compatible);
+		return className + compatible.toLowerCase();
 	};
-
-	getFishClassNameCompatible = compatible => {
-		let returnSt = "";
-
-		switch (compatible) {
-			case "Yes":
-				returnSt = "yes";
-				break;
-			case "Maybe":
-				returnSt = "maybe";
-				break;
-			case "No":
-				returnSt = "no";
-				break;
-			default:
-				returnSt = "";
-				break;
-		}
-
-		return returnSt;
-	}
 
 }
 
