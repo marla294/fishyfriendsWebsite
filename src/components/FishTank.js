@@ -104,6 +104,7 @@ class FishTank extends React.Component {
 		{
 			return "fish selected";
 		}
+
 		return "fish";
 	};
 
@@ -115,6 +116,7 @@ class FishTank extends React.Component {
 		{
 			return "fish compatible-" + compatible;
 		}
+
 		return "fish";
 	};
 
@@ -138,19 +140,17 @@ class FishTank extends React.Component {
 	};
 
 	showCompatibility = fish => {
-		if (this.state.selectedFishes.length === 0)
+		if (this.state.selectedFishes.length < 2)
 		{
 			return false;
 		}
 
-		if (fish === this.state.hoverFish)
-		{
-			return true;
-		}
-		else
+		if (this.getCompatibility(fish).WorstCompatibility === "Yes")
 		{
 			return false;
 		}
+
+		return fish === this.state.hoverFish;
 	};
 
 }
