@@ -8,24 +8,27 @@ class FishTank extends React.Component {
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
-		return <div className="fishTank">{this.renderFishTank()}</div>;
+		return  <div>
+					<div className="fishTank">{this.renderFishTank()}</div>
+				    <Compatibility 
+						compatibility={this.getCompatibility(this.state.hoverFish)} 
+						show={this.showCompatibility(this.state.hoverFish)}
+					/>
+				</div>;
 	}
 
 	renderFishTank = () => {
 		return this.state.compatibility.map(f => { 
 				let fish = f.MainFish;
-				return (<div key={fish.Id}>
-							<Fish 
-								name={fish.Name} 
-								fishClassName={this.getFishClassName(fish)} 
-								clickFn={() => this.clickOnAFish(fish)}
-								mouseOverFn={() => this.setHoverFish(fish)}
-							/>
-							<Compatibility 
-								compatibility={this.getCompatibility(fish)} 
-								show={this.showCompatibility(fish)}
-							/>
-						</div>
+				return (
+					<div key={fish.Id}>
+						<Fish 
+							name={fish.Name} 
+							fishClassName={this.getFishClassName(fish)} 
+							clickFn={() => this.clickOnAFish(fish)}
+							mouseOverFn={() => this.setHoverFish(fish)}
+						/>
+					</div>
 				);
 			}
 		);
@@ -130,7 +133,12 @@ class FishTank extends React.Component {
 	};
 
 	getCompatibility = fish => {
-		return this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
+		if (fish) {
+			return this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
+		} else {
+			return null;
+		}
+		
 	};
 
 	setHoverFish = fish => {

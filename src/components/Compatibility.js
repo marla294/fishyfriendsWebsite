@@ -8,15 +8,20 @@ class Compatibility extends React.Component {
 	}
 
 	renderFish = () => {
-		return this.props.compatibility.CompatibilityList.map(C => {
-			let fish = C.SelectedFish;
-			return (<Fish
-					key={fish.Id}
-					name={fish.Name}
-					fishClassName={this.getFishClassName(C)}
-					clickFn={()=>{}}
-			/>);
-		});
+		if (this.props.compatibility) {
+			return this.props.compatibility.CompatibilityList.map(C => {
+				let fish = C.SelectedFish;
+				return (<Fish
+						key={fish.Id}
+						name={fish.Name}
+						fishClassName={this.getFishClassName(C)}
+						clickFn={()=>{}}
+				/>);
+			});
+		} else {
+			return <div></div>
+		}
+		
 	};
 
 	showCompatibility = () => {
