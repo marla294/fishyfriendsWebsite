@@ -8,3 +8,8 @@
 	margin-top: 40px;
 	padding: 20px;
 }
+
+.fishContainer {
+	position: relative;
+    display: inline-block;
+}

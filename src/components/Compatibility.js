@@ -4,7 +4,11 @@ import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
 	render() {
-		return (<div className={this.showCompatibility()}>{this.renderFish()}</div>);
+		return (
+				<div className={this.showCompatibility()}>
+					{this.renderFish()}
+				</div>
+			);
 	}
 
 	renderFish = () => {

@@ -6,6 +6,10 @@
 	display: grid;
 	grid-gap: 0.4em;
 	display: none;
+	position: absolute;
+	z-index: 1;
+	left: 25%;
+	top: 80%
 }
 
 .show {
