@@ -9,6 +9,7 @@
 	margin-right: 0.25em;
 	display: none;
 	justify-content: center;
+	justify-self: right;
 	align-content: center;
 	align-self: center;
 }

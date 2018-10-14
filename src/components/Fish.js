@@ -6,12 +6,14 @@ import "../css/Fish.css";
 class Fish extends React.Component {
 	render() {
 		return (
-			<div className={this.props.fishClassName} onClick={this.props.clickFn} onMouseOver={this.props.mouseOverFn}>
-				<img src={this.getImageSource()} alt="fishPic" />
-				<div className="name">
-					{this.capitalizeFirstLetter(this.props.name)}
+			<div className={this.props.fishClassName} onMouseOver={this.props.mouseOverFn}>
+				<div onClick={this.props.clickFn} className="fishInner">
+					<img src={this.getImageSource()} alt="fishPic" />
+					<div className="name">
+						{this.capitalizeFirstLetter(this.props.name)}
+					</div>
 				</div>
-				<Button label="i" clickFn={()=>{}} show={this.props.showInfo}/>
+				<Button label="i" clickFn={this.props.clickInfoBtnFn} show={this.props.showInfoButton}/>
 			</div>
 		);
 	}

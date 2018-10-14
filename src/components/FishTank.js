@@ -17,10 +17,10 @@ class FishTank extends React.Component {
 				return (<div key={fish.Id} className="fishContainer"> 
 							<Fish 
 								name={fish.Name} 
-								showInfo={true}
+								showInfoButton={true}
 								fishClassName={this.getFishClassName(fish)} 
 								clickFn={() => this.clickOnAFish(fish)}
-								mouseOverFn={() => this.setHoverFish(fish)}
+								clickInfoBtnFn={() => this.setHoverFish(fish)}
 							/>
 							<Compatibility 
 								compatibility={this.getCompatibility(fish)} 
@@ -141,15 +141,15 @@ class FishTank extends React.Component {
 	};
 
 	showCompatibility = fish => {
-		if (this.state.selectedFishes.length < 2)
-		{
-			return false;
-		}
+		// if (this.state.selectedFishes.length < 2)
+		// {
+		// 	return false;
+		// }
 
-		if (this.getCompatibility(fish).WorstCompatibility === "Yes")
-		{
-			return false;
-		}
+		// if (this.getCompatibility(fish).WorstCompatibility === "Yes")
+		// {
+		// 	return false;
+		// }
 
 		return fish === this.state.hoverFish;
 	};

@@ -1,8 +1,7 @@
 .fish {
 	width: 100%;
 	display: grid;
-	grid-gap: 0.5em;
-	grid-template-columns: auto 1fr auto;
+	grid-template-columns: auto 1fr;
 	border-radius: 1em;
 	box-sizing: border-box;
 	border: 0.08em solid var(--blue);
@@ -11,6 +10,13 @@
 .fish:hover {
 	color: var(--yellow);
 	cursor: pointer;
+}
+
+.fishInner {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: 0.5em;
+	width: 100%;
 }
 
 .selected {
@@ -42,12 +48,12 @@
 	color: var(--yellow);
 }
 
-.fish > img {
+.fish img {
 	width: 2em;
 	margin: 0.2em;
 }
 
-.fish > .name {
+.fish .name {
 	align-self: center;
 	justify-self: left;
 }
