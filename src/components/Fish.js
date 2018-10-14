@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "./Button";
 import "../css/Fish.css";
 
 class Fish extends React.Component {
@@ -10,6 +11,7 @@ class Fish extends React.Component {
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}
 				</div>
+				<Button label="i" clickFn={()=>{}}/>
 			</div>
 		);
 	}

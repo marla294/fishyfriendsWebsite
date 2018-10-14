@@ -2,7 +2,7 @@
 	width: 100%;
 	display: grid;
 	grid-gap: 0.5em;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: auto 1fr auto;
 	border-radius: 1em;
 	box-sizing: border-box;
 	border: 0.08em solid var(--blue);
