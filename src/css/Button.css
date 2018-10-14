@@ -5,12 +5,12 @@
 	font-size: 0.5em;
 	background-color: lightgray;
 	color: darkblue;
-	display: grid;
+	opacity: 0.5;
+	margin-right: 0.25em;
+	display: none;
 	justify-content: center;
 	align-content: center;
 	align-self: center;
-	opacity: 0.5;
-	margin-right: 0.25em;
 }
 
 .button:hover {
@@ -19,4 +19,8 @@
 
 .button h2 {
 	margin: 0;
+}
+
+.showButton {
+	display:grid;
 }

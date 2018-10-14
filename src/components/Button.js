@@ -5,10 +5,18 @@ import "../css/Button.css";
 class Button extends React.Component {
 	render() {
 		return (
-			<div className="button" onClick={this.props.clickFn}>
+			<div className={this.getClassName()} onClick={this.props.clickFn}>
 				<h2>{this.props.label}</h2>
 			</div>
 		);
+	}
+
+	getClassName = () => {
+		if (this.props.show) {
+			return "button showButton";
+		} else {
+			return "button";
+		}
 	}
 }
 

@@ -11,7 +11,7 @@ class Fish extends React.Component {
 				<div className="name">
 					{this.capitalizeFirstLetter(this.props.name)}
 				</div>
-				<Button label="i" clickFn={()=>{}}/>
+				<Button label="i" clickFn={()=>{}} show={this.props.showInfo}/>
 			</div>
 		);
 	}

@@ -17,6 +17,7 @@ class FishTank extends React.Component {
 				return (<div key={fish.Id} className="fishContainer"> 
 							<Fish 
 								name={fish.Name} 
+								showInfo={true}
 								fishClassName={this.getFishClassName(fish)} 
 								clickFn={() => this.clickOnAFish(fish)}
 								mouseOverFn={() => this.setHoverFish(fish)}
