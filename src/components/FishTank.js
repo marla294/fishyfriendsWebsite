@@ -137,7 +137,11 @@ class FishTank extends React.Component {
 	};
 
 	setHoverFish = fish => {
-		this.setState({ hoverFish: fish });
+		if (this.state.hoverFish && this.state.hoverFish.Id === fish.Id) {
+			this.setState({ hoverFish: null });
+		} else {
+			this.setState({ hoverFish: fish });
+		}
 	};
 
 	showCompatibility = fish => {
