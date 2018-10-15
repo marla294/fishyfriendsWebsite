@@ -22,7 +22,8 @@ class Button extends React.Component {
 
 Button.propTypes = {
 	label: PropTypes.string.isRequired,
-	clickFn: PropTypes.func.isRequired
+	clickFn: PropTypes.func.isRequired,
+	show: PropTypes.bool.isRequired
 };
 
 export default Button;
