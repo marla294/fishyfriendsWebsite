@@ -12,11 +12,9 @@ class Button extends React.Component {
 	}
 
 	getClassName = () => {
-		if (this.props.show) {
-			return "button showButton";
-		} else {
-			return "button";
-		}
+		let className = "button";
+
+		return className + (this.props.show ? " showButton" : "");
 	}
 }
 
