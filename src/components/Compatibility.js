@@ -1,13 +1,15 @@
 import React from "react";
 import Fish from "./Fish";
 import PropTypes from "prop-types";
+import Button from "./Button";
 import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
 	render() {
 		return (
 				<div className={this.showCompatibility()}>
-					<div>Compatibility</div>
+					<div className="buttonWrapper"><Button label="&times;" show={true} clickFn={() => {}}/></div>
+					<div className="compatibilityTitle">Compatibility</div>
 					<div className="compatibilityContainer">
 						{this.renderFish()}
 					</div>

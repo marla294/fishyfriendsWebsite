@@ -2,9 +2,3 @@
 	margin: 0 1em;
 	display: grid;
 }
-
-.buttonWrapper {
-	display: grid;
-	justify-content: center;
-	margin-top: 1em;
-}
