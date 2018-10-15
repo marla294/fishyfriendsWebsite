@@ -145,16 +145,6 @@ class FishTank extends React.Component {
 	};
 
 	showCompatibility = fish => {
-		// if (this.state.selectedFishes.length < 2)
-		// {
-		// 	return false;
-		// }
-
-		// if (this.getCompatibility(fish).WorstCompatibility === "Yes")
-		// {
-		// 	return false;
-		// }
-
 		return fish === this.state.hoverFish;
 	};
 

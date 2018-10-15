@@ -40,7 +40,9 @@ class Fish extends React.Component {
 
 Fish.propTypes = {
 	name: PropTypes.string.isRequired,
-	fishClassName: PropTypes.string.isRequired
+	fishClassName: PropTypes.string.isRequired,
+	clickFn: PropTypes.func.isRequired,
+	clickInfoBtnFn: PropTypes.func.isRequired
 };
 
 export default Fish;
