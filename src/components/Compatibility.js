@@ -1,5 +1,6 @@
 import React from "react";
 import Fish from "./Fish";
+import PropTypes from "prop-types";
 import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
@@ -36,5 +37,10 @@ class Compatibility extends React.Component {
 	};
 
 }
+
+Compatibility.propTypes = {
+	compatibility: PropTypes.object.isRequired,
+	show: PropTypes.bool.isRequired
+};
 
 export default Compatibility;
