@@ -19,11 +19,10 @@ class Compatibility extends React.Component {
 			let fish = C.SelectedFish;
 			return (<Fish
 					key={fish.Id}
-					name={fish.Name}
 					fish={fish}
-					isSelected={false}
 					clickFn={()=>{}}
 					showInfoButton={false}
+					isSelected={false}
 					compatible={C.Compatible}
 			/>);
 		});

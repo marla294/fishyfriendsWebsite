@@ -10,7 +10,7 @@ class Fish extends React.Component {
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
 					<div className="name">
-						{this.capitalizeFirstLetter(this.props.name)}
+						{this.capitalizeFirstLetter(this.props.fish.Name)}
 					</div>
 				</div>
 				<Button label="i" show={this.props.showInfoButton} clickFn={this.getInfoClickFn()} />
@@ -62,7 +62,7 @@ class Fish extends React.Component {
 	};
 
 	getImageSource = () => {
-		let pictureName = this.props.name;
+		let pictureName = this.props.fish.Name;
 
 		if (pictureName === "corals/clams") {
 			pictureName = "corals and clams";
@@ -86,10 +86,10 @@ class Fish extends React.Component {
 }
 
 Fish.propTypes = {
-	name: PropTypes.string.isRequired,
 	fish: PropTypes.object.isRequired,
 	clickFn: PropTypes.func.isRequired,
-	showInfoButton: PropTypes.bool.isRequired
+	showInfoButton: PropTypes.bool.isRequired,
+	isSelected: PropTypes.bool.isRequired
 };
 
 export default Fish;

@@ -16,11 +16,10 @@ class FishTank extends React.Component {
 				let fish = f.MainFish;
 				return (<div key={fish.Id} className="fishContainer"> 
 							<Fish 
-								name={fish.Name} 
-								showInfoButton={true}
 								fish={fish}
-								isSelected={this.isSelectedFish(fish)}
 								clickFn={() => this.clickOnAFish(fish)}
+								showInfoButton={true}
+								isSelected={this.isSelectedFish(fish)}
 								clickInfoBtnFn={() => this.setInfoFish(fish)}
 								compatible={this.getCompatibility(fish).WorstCompatibility}
 							/>
