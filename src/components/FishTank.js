@@ -18,9 +18,11 @@ class FishTank extends React.Component {
 							<Fish 
 								name={fish.Name} 
 								showInfoButton={true}
-								fishClassName={this.getFishClassName(fish)} 
+								fish={fish}
+								isSelected={this.isSelectedFish(fish)}
 								clickFn={() => this.clickOnAFish(fish)}
 								clickInfoBtnFn={() => this.setInfoFish(fish)}
+								compatible={this.getCompatibility(fish).WorstCompatibility}
 							/>
 							<Compatibility 
 								compatibility={this.getCompatibility(fish)} 
@@ -69,6 +71,17 @@ class FishTank extends React.Component {
 		}
 	};
 
+	isSelectedFish = fish => {
+		let selectedFishIndex = this.getFishIndexFromSelectedFishArray(fish);
+
+		if (selectedFishIndex !== -1)
+		{
+			return true;
+		}
+
+		return false;
+	};
+
 	getFishIndexFromSelectedFishArray = fish => {
 		return this.state
 			.selectedFishes
@@ -85,40 +98,6 @@ class FishTank extends React.Component {
 		let selectedFishes = [...this.state.selectedFishes];
 		selectedFishes.splice(fishIndex, 1);
 		this.setState({ selectedFishes });
-	};
-
-	getFishClassName = fish => {
-		let fishClassName = this.getFishClassNameIsSelected(fish);
-
-		if (fishClassName === "fish")
-		{
-			fishClassName = this.getFishClassNameIsCompatible(fish);
-		}
-
-		return fishClassName;
-	};
-
-	getFishClassNameIsSelected = fish => {
-		let selectedFishIndex = this.getFishIndexFromSelectedFishArray(fish);
-
-		if (selectedFishIndex !== -1)
-		{
-			return "fish selected";
-		}
-
-		return "fish";
-	};
-
-	getFishClassNameIsCompatible = fish => {
-		let compatible = this.getCompatible(fish).toLowerCase();
-		let hasCompatible = ["yes", "maybe", "no"].findIndex(ans => ans === compatible);
-
-		if (hasCompatible !== -1)
-		{
-			return "fish compatible-" + compatible;
-		}
-
-		return "fish";
 	};
 
 	getCompatible = fish => {

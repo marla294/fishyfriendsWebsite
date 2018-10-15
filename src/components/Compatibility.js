@@ -20,9 +20,11 @@ class Compatibility extends React.Component {
 			return (<Fish
 					key={fish.Id}
 					name={fish.Name}
-					fishClassName={this.getFishClassName(C.Compatible)}
+					fish={fish}
+					isSelected={false}
 					clickFn={()=>{}}
 					showInfoButton={false}
+					compatible={C.Compatible}
 			/>);
 		});
 	};
@@ -31,12 +33,6 @@ class Compatibility extends React.Component {
 		let show = this.props.show ? " show" : "";
 
 		return "compatibility" + show;
-	};
-
-	getFishClassName = compatible => {
-		let className = "fish small compatible-";
-
-		return className + compatible.toLowerCase();
 	};
 
 }
