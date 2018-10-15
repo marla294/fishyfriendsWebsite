@@ -6,14 +6,14 @@ import "../css/Fish.css";
 class Fish extends React.Component {
 	render() {
 		return (
-			<div className={this.props.fishClassName} onMouseOver={this.props.mouseOverFn}>
+			<div className={this.props.fishClassName}>
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
 					<div className="name">
 						{this.capitalizeFirstLetter(this.props.name)}
 					</div>
 				</div>
-				<Button label="i" clickFn={this.props.clickInfoBtnFn} show={this.props.showInfoButton}/>
+				<Button label="i" show={this.props.showInfoButton} clickFn={this.getInfoClickFn()} />
 			</div>
 		);
 	}
@@ -35,6 +35,10 @@ class Fish extends React.Component {
 	capitalizeFirstLetter = S => {
 		return S[0].toUpperCase() + S.slice(1);
 	};
+
+	getInfoClickFn = () => {
+		return this.props.showInfoButton ? this.props.clickInfoBtnFn : (() => {});
+	};
 	
 }
 
@@ -42,7 +46,7 @@ Fish.propTypes = {
 	name: PropTypes.string.isRequired,
 	fishClassName: PropTypes.string.isRequired,
 	clickFn: PropTypes.func.isRequired,
-	clickInfoBtnFn: PropTypes.func.isRequired
+	showInfoButton: PropTypes.bool.isRequired
 };
 
 export default Fish;

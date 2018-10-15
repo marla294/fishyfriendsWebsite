@@ -22,7 +22,6 @@ class Compatibility extends React.Component {
 					name={fish.Name}
 					fishClassName={this.getFishClassName(C.Compatible)}
 					clickFn={()=>{}}
-					clickInfoBtnFn={()=>{}}
 					showInfoButton={false}
 			/>);
 		});
