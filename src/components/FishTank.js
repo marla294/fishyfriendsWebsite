@@ -4,7 +4,7 @@ import Compatibility from "./Compatibility";
 import "../css/FishTank.css";
 
 class FishTank extends React.Component {
-	state = { selectedFishes: [], compatibility: [], infoFish: null };
+	state = { selectedFishes: [], compatibility: [], selectedFish: null };
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
@@ -20,7 +20,7 @@ class FishTank extends React.Component {
 								clickFn={() => this.clickOnAFish(fish)}
 								showInfoButton={true}
 								isSelected={this.isSelectedFish(fish)}
-								clickInfoBtnFn={() => this.setInfoFish(fish)}
+								clickInfoBtnFn={() => this.setSelectedFish(fish)}
 								compatible={this.getCompatible(fish)}
 								makeSmall={false}
 							/>
@@ -115,16 +115,16 @@ class FishTank extends React.Component {
 		return this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
 	};
 
-	setInfoFish = fish => {
-		if (this.state.infoFish && this.state.infoFish.Id === fish.Id) {
-			this.setState({ infoFish: null });
+	setSelectedFish = fish => {
+		if (this.state.selectedFish && this.state.selectedFish.Id === fish.Id) {
+			this.setState({ selectedFish: null });
 		} else {
-			this.setState({ infoFish: fish });
+			this.setState({ selectedFish: fish });
 		}
 	};
 
 	showCompatibility = fish => {
-		return fish === this.state.infoFish;
+		return fish === this.state.selectedFish;
 	};
 
 }
