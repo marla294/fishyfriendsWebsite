@@ -24,6 +24,7 @@ class Compatibility extends React.Component {
 					showInfoButton={false}
 					isSelected={false}
 					compatible={C.Compatible}
+					makeSmall={true}
 			/>);
 		});
 	};

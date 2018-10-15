@@ -26,7 +26,7 @@ class Fish extends React.Component {
 			fishClassName = this.getFishClassNameIsCompatible(fish);
 		}
 
-		return fishClassName;
+		return fishClassName + (this.props.makeSmall ? " small" : "");
 	};
 
 	getFishClassNameIsSelected = () => {
@@ -90,7 +90,8 @@ Fish.propTypes = {
 	clickFn: PropTypes.func.isRequired,
 	showInfoButton: PropTypes.bool.isRequired,
 	isSelected: PropTypes.bool.isRequired,
-	compatible: PropTypes.string.isRequired
+	compatible: PropTypes.string.isRequired,
+	makeSmall: PropTypes.bool.isRequired
 };
 
 export default Fish;
