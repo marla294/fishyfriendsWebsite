@@ -1,18 +1,9 @@
 .compatibility {
-	width: 5.7em;
 	background: var(--blue);
-	padding: 0.417em;
-	border-radius: 0.5em;
-	display: none;
-	position: absolute;
-	z-index: 1;
-	left: 25%;
-	top: 80%;
-	border: 0.075em solid darkblue;
-	box-shadow: 0.1em 0.1em 0.1em grey;
+	display: block;
 }
 
-.show {
+.showCompatibility {
 	display: block;
 }
 
@@ -27,9 +18,3 @@
 	justify-content: center;
 }
 
-.buttonWrapper {
-	margin: 0;
-	width: 100%;
-	display: grid;
-	justify-items: end;
-}
