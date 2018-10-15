@@ -5,10 +5,12 @@ import Button from "./Button";
 import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
+	state = {show:false};
+
 	render() {
 		return (
 				<div className={this.showCompatibility()}>
-					<div className="buttonWrapper"><Button label="&times;" show={true} clickFn={() => {}}/></div>
+					<div className="buttonWrapper"><Button label="&times;" show={true} clickFn={() => {this.setState({show: false})}}/></div>
 					<div className="compatibilityTitle">Compatibility</div>
 					<div className="compatibilityContainer">
 						{this.renderFish()}
@@ -32,10 +34,18 @@ class Compatibility extends React.Component {
 		});
 	};
 
-	showCompatibility = () => {
-		let show = this.props.show ? " show" : "";
+	componentDidMount() {
+		this.setState({show: this.props.show});
+	}
 
-		return "compatibility" + show;
+	componentDidUpdate(prevProps) {
+		if (this.props.show !== prevProps.show) {
+			this.setState({show: this.props.show});
+		}
+	}
+
+	showCompatibility = () => {
+		return "compatibility" + (this.state.show ? " show" : "");
 	};
 
 }
