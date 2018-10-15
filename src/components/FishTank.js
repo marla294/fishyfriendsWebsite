@@ -4,7 +4,7 @@ import Compatibility from "./Compatibility";
 import "../css/FishTank.css";
 
 class FishTank extends React.Component {
-	state = { selectedFishes: [], compatibility: [], hoverFish: null };
+	state = { selectedFishes: [], compatibility: [], infoFish: null };
 	url = "http://127.0.0.1:8080/api/";
 
 	render() {
@@ -20,7 +20,7 @@ class FishTank extends React.Component {
 								showInfoButton={true}
 								fishClassName={this.getFishClassName(fish)} 
 								clickFn={() => this.clickOnAFish(fish)}
-								clickInfoBtnFn={() => this.setHoverFish(fish)}
+								clickInfoBtnFn={() => this.setInfoFish(fish)}
 							/>
 							<Compatibility 
 								compatibility={this.getCompatibility(fish)} 
@@ -136,16 +136,16 @@ class FishTank extends React.Component {
 		return this.state.compatibility.find(c => c.MainFish.Id === fish.Id);
 	};
 
-	setHoverFish = fish => {
-		if (this.state.hoverFish && this.state.hoverFish.Id === fish.Id) {
-			this.setState({ hoverFish: null });
+	setInfoFish = fish => {
+		if (this.state.infoFish && this.state.infoFish.Id === fish.Id) {
+			this.setState({ infoFish: null });
 		} else {
-			this.setState({ hoverFish: fish });
+			this.setState({ infoFish: fish });
 		}
 	};
 
 	showCompatibility = fish => {
-		return fish === this.state.hoverFish;
+		return fish === this.state.infoFish;
 	};
 
 }
