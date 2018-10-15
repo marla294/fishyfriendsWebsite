@@ -89,7 +89,8 @@ Fish.propTypes = {
 	fish: PropTypes.object.isRequired,
 	clickFn: PropTypes.func.isRequired,
 	showInfoButton: PropTypes.bool.isRequired,
-	isSelected: PropTypes.bool.isRequired
+	isSelected: PropTypes.bool.isRequired,
+	compatible: PropTypes.string.isRequired
 };
 
 export default Fish;

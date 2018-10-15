@@ -21,7 +21,7 @@ class FishTank extends React.Component {
 								showInfoButton={true}
 								isSelected={this.isSelectedFish(fish)}
 								clickInfoBtnFn={() => this.setInfoFish(fish)}
-								compatible={this.getCompatibility(fish).WorstCompatibility}
+								compatible={this.getCompatible(fish)}
 							/>
 							<Compatibility 
 								compatibility={this.getCompatibility(fish)} 
