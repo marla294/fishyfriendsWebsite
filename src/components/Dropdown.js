@@ -6,7 +6,7 @@ import Info from './Info';
 import "../css/Dropdown.css";
 
 class Dropdown extends React.Component {
-	state = {show:false};
+	state = {showDropdown:false};
 
 	render() {
 		return (
@@ -19,24 +19,24 @@ class Dropdown extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({show: this.props.show});
+		this.setState({showDropdown: this.props.showDropdown});
 	}
 
 	componentDidUpdate(prevProps) {
-		if (this.props.show !== prevProps.show) {
-			this.setState({show: this.props.show});
+		if (this.props.showDropdown !== prevProps.showDropdown) {
+			this.setState({showDropdown: this.props.showDropdown});
 		}
 	}
 
 	showDropdown = () => {
-		return "dropdown" + (this.state.show ? " showDropdown" : "");
+		return "dropdown" + (this.state.showDropdown ? " showDropdown" : "");
 	};
 
 }
 
 Dropdown.propTypes = {
 	compatibility: PropTypes.object.isRequired,
-	show: PropTypes.bool.isRequired,
+	showDropdown: PropTypes.bool.isRequired,
 	fish: PropTypes.object.isRequired
 };
 
