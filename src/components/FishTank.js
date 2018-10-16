@@ -1,6 +1,5 @@
 import React from "react";
 import Fish from "./Fish";
-// import Compatibility from "./Compatibility";
 import Dropdown from "./Dropdown";
 import "../css/FishTank.css";
 
@@ -28,6 +27,7 @@ class FishTank extends React.Component {
 							<Dropdown
 								compatibility={this.getCompatibility(fish)} 
 								show={this.showCompatibility(fish)}
+								fish={fish}
 							/>
 						</div>
 				);
