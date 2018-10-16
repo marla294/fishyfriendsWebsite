@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
+import { capitalizeFirstLetter } from '../HelperFunctions';
 import "../css/Fish.css";
 
 class Fish extends React.Component {
@@ -10,7 +11,7 @@ class Fish extends React.Component {
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
 					<div className="name">
-						{this.capitalizeFirstLetter(this.props.fish.Name)}
+						{capitalizeFirstLetter(this.props.fish.Name)}
 					</div>
 				</div>
 				<Button label="i" show={this.props.showInfoButton} clickFn={this.getInfoClickFn()} />
@@ -55,9 +56,9 @@ class Fish extends React.Component {
 		return `/images/fish/${pictureName}.png`;
 	};
 
-	capitalizeFirstLetter = S => {
-		return S[0].toUpperCase() + S.slice(1);
-	};
+	// capitalizeFirstLetter = S => {
+	// 	return S[0].toUpperCase() + S.slice(1);
+	// };
 
 	getInfoClickFn = () => {
 		return this.props.showInfoButton ? this.props.clickInfoBtnFn : (() => {});
