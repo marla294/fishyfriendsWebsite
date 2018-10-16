@@ -13,7 +13,7 @@ class Dropdown extends React.Component {
 			<div className={this.showDropdown()}>
 				<div className="buttonWrapper"><Button label="&times;" show={true} clickFn={() => {this.setState({show: false})}}/></div>
 				<Info fish={this.props.fish} />
-				<Compatibility show={true} compatibility={this.props.compatibility}/>
+				<Compatibility showCompatibility={this.props.showCompatibility} compatibility={this.props.compatibility}/>
 			</div>
 		);
 	}

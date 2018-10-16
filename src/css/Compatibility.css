@@ -1,6 +1,6 @@
 .compatibility {
 	background: var(--blue);
-	display: block;
+	display: none;
 }
 
 .showCompatibility {

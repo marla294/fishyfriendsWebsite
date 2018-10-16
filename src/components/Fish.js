@@ -56,10 +56,6 @@ class Fish extends React.Component {
 		return `/images/fish/${pictureName}.png`;
 	};
 
-	// capitalizeFirstLetter = S => {
-	// 	return S[0].toUpperCase() + S.slice(1);
-	// };
-
 	getInfoClickFn = () => {
 		return this.props.showInfoButton ? this.props.clickInfoBtnFn : (() => {});
 	};

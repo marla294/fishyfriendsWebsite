@@ -27,6 +27,7 @@ class FishTank extends React.Component {
 							<Dropdown
 								compatibility={this.getCompatibility(fish)} 
 								showDropdown={this.showDropdown(fish)}
+								showCompatibility={this.showCompatibility()}
 								fish={fish}
 							/>
 						</div>
@@ -127,6 +128,14 @@ class FishTank extends React.Component {
 	showDropdown = fish => {
 		return fish === this.state.selectedFish;
 	};
+
+	showCompatibility = () => {
+		if (this.state.selectedFishes.length < 2)
+		{
+			return false;
+		}
+		return true;
+	}
 
 }
 

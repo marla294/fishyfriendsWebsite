@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
-	state = {show:false};
+	state = {showCompatibility:false};
 
 	render() {
 		return (
@@ -33,24 +33,24 @@ class Compatibility extends React.Component {
 	};
 
 	componentDidMount() {
-		this.setState({show: this.props.show});
+		this.setState({showCompatibility: this.props.showCompatibility});
 	}
 
 	componentDidUpdate(prevProps) {
-		if (this.props.show !== prevProps.show) {
-			this.setState({show: this.props.show});
+		if (this.props.showCompatibility !== prevProps.showCompatibility) {
+			this.setState({showCompatibility: this.props.showCompatibility});
 		}
 	}
 
 	showCompatibility = () => {
-		return "compatibility" + (this.state.show ? " showCompatibility" : "");
+		return "compatibility" + (this.state.showCompatibility ? " showCompatibility" : "");
 	};
 
 }
 
 Compatibility.propTypes = {
 	compatibility: PropTypes.object.isRequired,
-	show: PropTypes.bool.isRequired
+	showCompatibility: PropTypes.bool.isRequired
 };
 
 export default Compatibility;
