@@ -6,8 +6,8 @@ import "../css/Info.css";
 class Info extends React.Component {
 	render() {
 		return (
-			<div>
-				<div>{capitalizeFirstLetter(this.props.fish.Name)}</div>
+			<div className="info">
+				<div className="title">{capitalizeFirstLetter(this.props.fish.Name)}</div>
 				<ul>
 					{this.renderInfo()}
 				</ul>
@@ -27,3 +27,4 @@ Info.propTypes = {
 };
 
 export default Info;
+
