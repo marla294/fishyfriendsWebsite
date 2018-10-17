@@ -2,7 +2,6 @@ import React from "react";
 import Fish from "./Fish";
 import DropdownPane from "./DropdownPane";
 import PropTypes from "prop-types";
-import "../css/Compatibility.css";
 
 class Compatibility extends React.Component {
 	render() {
