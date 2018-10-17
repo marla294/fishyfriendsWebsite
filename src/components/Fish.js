@@ -5,19 +5,25 @@ import { capitalizeFirstLetter } from '../HelperFunctions';
 import "../css/Fish.css";
 
 class Fish extends React.Component {
+	state = {showInfoButton: false}
+
 	render() {
 		return (
-			<div className={this.getFishClassName(this.props.fish)}>
+			<div 
+				className={this.getFishClassName(this.props.fish)} 
+				onMouseOver={() => this.setState({showInfoButton: true})}
+				onMouseOut={() => this.setState({showInfoButton: false})}
+			>
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
 					<div className="name">
 						{capitalizeFirstLetter(this.props.fish.Name)}
 					</div>
 				</div>
-				<Button label="i" show={this.props.showInfoButton} clickFn={this.getInfoClickFn()} />
+				<Button label="i" show={this.showInfoButton()} clickFn={this.getInfoClickFn()} />
 			</div>
 		);
-	}
+	};
 
 	getFishClassName = fish => {
 		let fishClassName = this.getFishClassNameIsCompatible(fish);
@@ -54,6 +60,14 @@ class Fish extends React.Component {
 		}
 
 		return `/images/fish/${pictureName}.png`;
+	};
+
+	showInfoButton = () => {
+		if (this.props.showInfoButton && this.state.showInfoButton)
+		{
+			return true;
+		}
+		return false;
 	};
 
 	getInfoClickFn = () => {

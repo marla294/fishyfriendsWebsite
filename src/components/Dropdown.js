@@ -11,7 +11,7 @@ class Dropdown extends React.Component {
 	render() {
 		return (
 			<div className={this.showDropdown()}>
-				<div className="buttonWrapper"><Button label="&times;" show={true} clickFn={() => {this.setState({show: false})}}/></div>
+				<div className="buttonWrapper"><Button label="&times;" show={true} clickFn={() => {this.setState({showDropdown: false})}}/></div>
 				<Info fish={this.props.fish} />
 				<Compatibility showCompatibility={this.props.showCompatibility} compatibility={this.props.compatibility}/>
 			</div>
