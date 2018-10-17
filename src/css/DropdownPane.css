@@ -18,7 +18,8 @@
 	grid-gap: 0.2em;
 }
 
-.contentContainer > .infoPiece {
+.contentContainer > p {
 	font-size: 16px;
+	margin: 0;
 	margin-left: 0.21em;
 }

@@ -12,7 +12,7 @@ class Info extends React.Component {
 
 	renderInfo = () => {
 		return this.props.fish.Info.map((info, i) => {
-			return <div key={i} className="infoPiece">{info}</div>
+			return <p key={i}>{info}</p>
 		})
 	};
 }
