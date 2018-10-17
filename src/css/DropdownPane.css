@@ -1,0 +1,18 @@
+.pane {
+	display: none;
+}
+
+.showPane {
+	display: block;
+}
+
+.title {
+	width: 100%;
+	display: grid;
+	justify-content: center;
+}
+
+.contentContainer {
+	display: grid;
+	grid-gap: 0.2em;
+}
