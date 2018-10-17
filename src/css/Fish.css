@@ -1,9 +1,7 @@
 .fish {
-	width: 100%;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	border-radius: 1em;
-	box-sizing: border-box;
 	border: 0.08em solid var(--blue);
 }
 
@@ -16,13 +14,11 @@
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-gap: 0.5em;
-	width: 100%;
 }
 
 .selected {
 	color: var(--yellow);
 	border: 0.08em solid var(--yellow);
-	box-sizing: border-box;
 }
 
 .compatible-yes {
