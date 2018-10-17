@@ -1,23 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { capitalizeFirstLetter } from '../HelperFunctions';
-import "../css/Info.css";
+import DropdownPane from "./DropdownPane";
 
 class Info extends React.Component {
 	render() {
 		return (
-			<div className="info">
-				<div className="title">{capitalizeFirstLetter(this.props.fish.Name)}</div>
-				<ul>
-					{this.renderInfo()}
-				</ul>
-			</div>
+			<DropdownPane title={capitalizeFirstLetter(this.props.fish.Name)} showPane={true} content={this.renderInfo()} />
 		);
 	};
 
 	renderInfo = () => {
 		return this.props.fish.Info.map((info, i) => {
-			return <li key={i}>{info}</li>
+			return <div key={i} className="infoPiece">{info}</div>
 		})
 	};
 }
@@ -27,4 +22,3 @@ Info.propTypes = {
 };
 
 export default Info;
-

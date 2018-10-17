@@ -1,5 +1,6 @@
 .pane {
 	display: none;
+	margin-bottom: 0.3em;
 }
 
 .showPane {
@@ -15,4 +16,9 @@
 .contentContainer {
 	display: grid;
 	grid-gap: 0.2em;
+}
+
+.contentContainer > .infoPiece {
+	font-size: 16px;
+	margin-left: 0.21em;
 }
