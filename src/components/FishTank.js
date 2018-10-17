@@ -6,6 +6,7 @@ import "../css/FishTank.css";
 class FishTank extends React.Component {
 	state = { selectedFishes: [], compatibility: [], selectedFish: null };
 	url = "http://127.0.0.1:8080/api/";
+	maxSelected = 10;
 
 	render() {
 		return <div className="fishTank">{this.renderFishTank()}</div>;
@@ -92,8 +93,13 @@ class FishTank extends React.Component {
 
 	addFishToSelectedFishArray = fish => {
 		let selectedFishes = [...this.state.selectedFishes];
-		selectedFishes.push(fish);
-		this.setState({ selectedFishes });
+
+		if (selectedFishes.length < this.maxSelected)
+		{
+			selectedFishes.push(fish);
+			this.setState({ selectedFishes });
+		}
+		
 	};
 
 	removeIndexFromSelectedFishArray = fishIndex => {
