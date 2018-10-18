@@ -18,6 +18,10 @@ Thank you https://www.ocellarisclownfish.com/compatibility/ !
 
 ## Images
 
-### Selecting Fish to Compare
+### Viewing Compatibility with Selected Fish
 
-![Selecting Fish](SelectingFish.png?raw=true "Selecting Fish")
+![Viewing Compatibility](ViewingCompatibility.png?raw=true "Viewing Compatibility")
+
+### Viewing Information on A Fish
+
+![Viewing Info](ViewingInfo.png?raw=true "Viewing Info")
