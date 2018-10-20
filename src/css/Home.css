@@ -1,4 +1,15 @@
 .home {
-	margin: 0 1em;
 	display: grid;
+}
+
+.homeTitle {
+	justify-self: center;
+	margin: 0;
+	margin-top: 0.5em;
+}
+
+.homeSubTitle {
+	justify-self: center;
+	margin: 0;
+	margin-top: 0.5em;
 }
