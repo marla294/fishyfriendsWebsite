@@ -1,0 +1,8 @@
+.About {
+	display: grid;
+}
+
+.About > * {
+	width: 90%;
+	justify-self: center;
+}
