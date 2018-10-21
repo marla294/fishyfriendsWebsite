@@ -2,10 +2,21 @@
 	display: grid;
 }
 
+.homeGoToAbout {
+	justify-self: end;
+	margin: 0.5em;
+	cursor: pointer;
+}
+
+.homeGoToAbout:hover {
+	color: var(--yellow);
+	cursor: pointer;
+}
+
 .homeTitle {
 	justify-self: center;
 	margin: 0;
-	margin-top: 0.5em;
+	margin-top: 0.25em;
 }
 
 .homeSubTitle {
