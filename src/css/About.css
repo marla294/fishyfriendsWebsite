@@ -6,3 +6,14 @@
 	width: 90%;
 	justify-self: center;
 }
+
+.aboutGoToHome {
+	justify-self: center;
+	cursor: pointer;
+	margin-top: 1em;
+}
+
+.aboutGoToHome:hover {
+	color: var(--yellow);
+	cursor: pointer;
+}

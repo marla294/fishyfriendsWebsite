@@ -16,9 +16,16 @@ class About extends React.Component {
 				<h3>Acknowledgements</h3>
 
 				<p>The data and pictures for this website were gathered from the helpful graphic found here: <a href="https://www.ocellarisclownfish.com/compatibility/">https://www.ocellarisclownfish.com/compatibility/</a>.  Thank you to Petco and Ocellaris Clownfish for supplying this chart.</p>
+
+				<a onClick={this.goToHome} className="aboutGoToHome">Back To Application</a>
 			</div>
 		);
 	}
+
+	goToHome = event => {
+		event.preventDefault();
+		this.props.history.push("/Home");
+	};
 }
 
 export default About;
