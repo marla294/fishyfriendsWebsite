@@ -5,7 +5,8 @@ import "../css/FishTank.css";
 
 class FishTank extends React.Component {
 	state = { selectedFishes: [], compatibility: [], selectedFish: null };
-	url = "http://127.0.0.1:8080/api/";
+	url = "https://www.axequest.com/fishfriends/api/";
+
 	maxSelected = 10;
 
 	render() {
