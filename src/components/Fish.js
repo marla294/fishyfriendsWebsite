@@ -5,13 +5,10 @@ import { capitalizeFirstLetter } from '../HelperFunctions';
 import "../css/Fish.css";
 
 class Fish extends React.Component {
-	state = {showInfoButton: false}
-
 	render() {
 		return (
 			<div 
-				className={this.getFishClassName(this.props.fish)} 
-				
+				className={this.getClassName()} 
 			>
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
@@ -24,26 +21,20 @@ class Fish extends React.Component {
 		);
 	};
 
-	getFishClassName = fish => {
-		let fishClassName = this.getFishClassNameIsCompatible(fish);
+	getClassName = () => {
+		let className = "fish";
+
+		if (this.fishHasCompatible())
+		{
+			className = "fish compatible-" + this.props.compatible.toLowerCase();
+		}
 
 		if (this.props.isSelected)
 		{
-			fishClassName = "fish selected";
+			className = "fish selected";
 		}
 
-		return fishClassName + (this.props.makeSmall ? " small" : "");
-	};
-
-	getFishClassNameIsCompatible = () => {
-		let hasCompatible = this.fishHasCompatible();
-
-		if (hasCompatible)
-		{
-			return "fish compatible-" + this.props.compatible.toLowerCase();
-		}
-
-		return "fish";
+		return className + (this.props.makeSmall ? " small" : "");
 	};
 
 	fishHasCompatible = () => {
@@ -73,7 +64,7 @@ class Fish extends React.Component {
 	};
 
 	showInfoButton = () => {
-		if (this.fishHasCompatible())
+		if (this.fishHasCompatible() && this.props.showInfoButton)
 		{
 			return true;
 		}
@@ -96,6 +87,3 @@ Fish.propTypes = {
 };
 
 export default Fish;
-
-// onMouseOver={() => this.setState({showInfoButton: true})}
-// 				onMouseOut={() => this.setState({showInfoButton: false})}
