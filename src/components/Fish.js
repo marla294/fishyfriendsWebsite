@@ -35,16 +35,27 @@ class Fish extends React.Component {
 		return fishClassName + (this.props.makeSmall ? " small" : "");
 	};
 
-	getFishClassNameIsCompatible = fish => {
+	getFishClassNameIsCompatible = () => {
+		let hasCompatible = this.fishHasCompatible();
+
+		if (hasCompatible)
+		{
+			return "fish compatible-" + this.props.compatible.toLowerCase();
+		}
+
+		return "fish";
+	};
+
+	fishHasCompatible = () => {
 		let compatible = this.props.compatible.toLowerCase();
 		let hasCompatible = ["yes", "maybe", "no"].findIndex(ans => ans === compatible);
 
 		if (hasCompatible !== -1)
 		{
-			return "fish compatible-" + compatible;
+			return true;
 		}
 
-		return "fish";
+		return false;
 	};
 
 	getImageSource = () => {
@@ -62,7 +73,7 @@ class Fish extends React.Component {
 	};
 
 	showInfoButton = () => {
-		if (this.props.showInfoButton && this.state.showInfoButton)
+		if (this.fishHasCompatible())
 		{
 			return true;
 		}
