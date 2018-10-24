@@ -11,8 +11,7 @@ class Fish extends React.Component {
 		return (
 			<div 
 				className={this.getFishClassName(this.props.fish)} 
-				onMouseOver={() => this.setState({showInfoButton: true})}
-				onMouseOut={() => this.setState({showInfoButton: false})}
+				
 			>
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
@@ -86,3 +85,6 @@ Fish.propTypes = {
 };
 
 export default Fish;
+
+// onMouseOver={() => this.setState({showInfoButton: true})}
+// 				onMouseOut={() => this.setState({showInfoButton: false})}
