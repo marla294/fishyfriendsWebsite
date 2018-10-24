@@ -78,7 +78,6 @@ class Fish extends React.Component {
 Fish.propTypes = {
 	fish: PropTypes.object.isRequired,
 	clickFn: PropTypes.func.isRequired,
-	showInfoButton: PropTypes.bool.isRequired,
 	isSelected: PropTypes.bool.isRequired,
 	compatible: PropTypes.string.isRequired,
 	makeSmall: PropTypes.bool.isRequired

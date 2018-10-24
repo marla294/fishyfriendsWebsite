@@ -17,7 +17,6 @@ class Compatibility extends React.Component {
 					key={fish.Id}
 					fish={fish}
 					clickFn={()=>{}}
-					showInfoButton={false}
 					isSelected={false}
 					compatible={C.Compatible}
 					makeSmall={true}
