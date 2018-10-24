@@ -7,9 +7,7 @@ import "../css/Fish.css";
 class Fish extends React.Component {
 	render() {
 		return (
-			<div 
-				className={this.getClassName()} 
-			>
+			<div className={this.getClassName()} >
 				<div onClick={this.props.clickFn} className="fishInner">
 					<img src={this.getImageSource()} alt="fishPic" />
 					<div className="name">
@@ -64,7 +62,7 @@ class Fish extends React.Component {
 	};
 
 	showInfoButton = () => {
-		if (this.fishHasCompatible() && this.props.showInfoButton)
+		if (this.fishHasCompatible() && !this.props.makeSmall)
 		{
 			return true;
 		}
@@ -72,7 +70,7 @@ class Fish extends React.Component {
 	};
 
 	getInfoClickFn = () => {
-		return this.props.showInfoButton ? this.props.clickInfoBtnFn : (() => {});
+		return !this.props.makeSmall ? this.props.clickInfoBtnFn : (() => {});
 	};
 	
 }
