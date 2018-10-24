@@ -1,6 +1,5 @@
 import React from "react";
 import FishTank from "./FishTank";
-import Footer from "./Footer";
 import "../css/Home.css";
 
 class Home extends React.Component {
@@ -11,7 +10,6 @@ class Home extends React.Component {
 				<h1 className="homeTitle">Fish Friends</h1>
 				<h3 className="homeSubTitle"><i>Select up to ten fish and see how they get along with the others!</i></h3>
 				<FishTank/>
-				<Footer />
 			</div>
 		);
 	}

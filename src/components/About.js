@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import "../css/About.css";
 
 class About extends React.Component {
@@ -20,7 +20,6 @@ class About extends React.Component {
 
 				<a onClick={this.goToHome} className="aboutGoToHome">Back To Application</a>
 
-				<Footer />
 			</div>
 		);
 	}
