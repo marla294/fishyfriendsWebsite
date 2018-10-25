@@ -7,8 +7,8 @@ const Router = props => (
 	<BrowserRouter>
 		<Switch>
 			<Route exact path="/" component={Home} />
-			<Route path="/Home" component={Home} />
-			<Route path="/About" component={About} />
+			<Route exact path="/Home" component={Home} />
+			<Route exact path="/About" component={About} />
 		</Switch>
 	</BrowserRouter>
 );
