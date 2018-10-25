@@ -6,6 +6,8 @@
 	justify-self: end;
 	margin: 0.5em;
 	cursor: pointer;
+	text-decoration: none;
+	color: darkblue;
 }
 
 .homeGoToAbout:hover {
