@@ -4,8 +4,6 @@ import Button from "./Button";
 import { capitalizeFirstLetter } from '../HelperFunctions';
 import "../css/Fish.css";
 
-
-
 class Fish extends React.Component {
 	render() {
 		return (
